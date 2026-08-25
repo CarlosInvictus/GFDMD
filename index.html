@@ -71,6 +71,22 @@ a:hover{color:var(--dot)}
 h2.eyebrow{font-size:.8125rem;font-weight:600;color:var(--dot);margin-bottom:1.5rem}
 .lede{font-size:clamp(1.15rem,.6vw + 1rem,1.375rem);line-height:1.6;max-width:58ch}
 
+/* ---------- the arc as a background system ---------- */
+main > section{
+  background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 62'><path d='M10 56 A40 40 0 0 1 90 56' fill='none' stroke='%231F3557' stroke-width='9' stroke-linecap='round' opacity='0.05'/><circle cx='10' cy='56' r='7' fill='%231F3557' opacity='0.05'/></svg>");
+  background-repeat:no-repeat;
+  background-position:right -5rem top 2.5rem;
+  background-size:26rem auto;
+}
+main > section.hero{background-image:none}
+main > section.access{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 62'><path d='M10 56 A40 40 0 0 1 90 56' fill='none' stroke='%23A8C6E8' stroke-width='9' stroke-linecap='round' opacity='0.09'/><circle cx='10' cy='56' r='7' fill='%23A8C6E8' opacity='0.09'/></svg>")}
+@media (max-width:48rem){main > section{background-size:16rem auto;background-position:right -4rem top 1.5rem}}
+
+/* scroll position, drawn along the bottom edge of the sticky header */
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:3px;background:transparent}
+.progress span{display:block;height:100%;width:0;background:var(--dot)}
+.nav{position:sticky}
+
 /* ---------- layout ---------- */
 .wrap{max-width:74rem;margin-inline:auto;padding-inline:var(--gutter)}
 section{padding-block:clamp(3.5rem,7vw,6.5rem)}
@@ -154,17 +170,24 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
 .btn-solid:hover{background:transparent;color:var(--navy)}
 
 /* ---------- figures ---------- */
-.figures{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));
-  gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:.75rem;overflow:hidden;
-  margin-top:3rem;
+.stat-panel{
+  display:grid;grid-template-columns:minmax(13rem,1fr) 1.6fr;gap:3rem;align-items:center;
+  margin-top:3rem;padding:2.25rem;background:var(--paper);
+  border:1px solid var(--rule);border-radius:.75rem;
 }
-.figure{background:var(--paper);padding:1.75rem 1.5rem}
-.figure b{
-  display:block;font-family:var(--display);font-weight:700;
-  font-size:clamp(1.85rem,3.5vw,2.6rem);color:var(--navy);line-height:1.05;letter-spacing:-.02em;
+@media (max-width:48rem){.stat-panel{grid-template-columns:1fr;gap:2rem}}
+.stat-dots svg{width:100%;max-width:15rem;height:auto;display:block}
+.stat-caption{font-size:.9375rem;line-height:1.5;color:#41597B;margin:1rem 0 0;max-width:24ch}
+.stat-caption b{color:var(--navy);font-size:1.0625rem}
+.bar-row{margin-bottom:1.5rem}
+.bar-row:last-child{margin-bottom:0}
+.bar-label{font-size:.9375rem;color:#41597B;margin:0 0 .5rem;max-width:none}
+.bar-label b{
+  font-family:var(--display);font-size:clamp(1.35rem,2.5vw,1.8rem);color:var(--navy);
+  letter-spacing:-.01em;margin-right:.4rem;
 }
-.figure span{display:block;font-size:.9375rem;line-height:1.45;margin-top:.5rem;color:#41597B}
+.bar{height:.75rem;background:var(--arc-pale);border-radius:1rem;overflow:hidden}
+.bar span{display:block;height:100%;width:var(--w);background:var(--dot);border-radius:1rem}
 .source{font-size:.875rem;color:#5A6E8C;margin-top:1rem;max-width:var(--measure)}
 
 /* ---------- aims: fixed 2 x 2 ---------- */
@@ -250,6 +273,7 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
 .plain li::before{content:"";position:absolute;left:0;top:1.15rem;width:.5rem;height:.5rem;border-radius:50%;background:var(--dot)}
 .orgs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;list-style:none;padding:0;margin:0}
 @media (max-width:46rem){.orgs{grid-template-columns:1fr}}
+.org-logo{height:3.5rem;width:auto;max-width:100%;object-fit:contain;object-position:left;margin-bottom:1.1rem}
 .org{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:.75rem;padding:1.75rem}
 .org a{margin-top:auto}
 .org h3{margin-bottom:.3rem}
@@ -323,6 +347,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       </ul>
     </nav>
   </div>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 </header>
 
 <main id="main">
@@ -368,6 +393,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <section id="why" class="tinted">
   <div class="wrap">
     <div class="section-head">
+      <svg class="arc-mark" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
+        <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
+      </svg>
       <p class="eyebrow">Why now</p>
       <h2>A gap between commitment and lived reality</h2>
     </div>
@@ -375,12 +404,130 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
     <p>Too often, disability is treated as an individual vulnerability rather than a crosscutting governance issue requiring structural reform. Across both labour migration and forced displacement, persons with disabilities can face barriers in recruitment, admission, employment, protection, assistance and access to services. Coordination between disability, labour migration and refugee actors remains fragmented, while disability-disaggregated data is inadequate, weakening evidence-informed policy and accountability.</p>
     <p>Disability can also be acquired or exacerbated during migration and displacement, including through violence, detention, trafficking, disrupted healthcare and precarious working or living conditions. For refugees, both the journey and the restrictions imposed on people on arrival can be disabling. Migration and refugee systems do not always recognise or respond to these experiences, while people with pre-existing and acquired disabilities can face different barriers throughout their journeys.</p>
 
-    <div class="figures">
-      <div class="figure"><b>304M</b><span>international migrants worldwide</span></div>
-      <div class="figure"><b>167.7M</b><span>international labour migrants</span></div>
-      <div class="figure"><b>38M</b><span>refugees displaced across borders</span></div>
-      <div class="figure"><b>1.3B</b><span>persons with disabilities &mdash; 16 per cent of the global population</span></div>
+    <div class="stat-panel">
+      <div class="stat-dots">
+        <svg viewBox="0 0 220 220" role="img" aria-label="A grid of 100 dots. 16 are filled in, showing that 16 in every 100 people worldwide have a disability.">
+          <circle cx="11" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="33" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="55" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="77" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="99" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="121" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="143" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="165" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="187" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="209" cy="11" r="8" fill="var(--navy)"/>
+          <circle cx="11" cy="33" r="8" fill="var(--navy)"/>
+          <circle cx="33" cy="33" r="8" fill="var(--navy)"/>
+          <circle cx="55" cy="33" r="8" fill="var(--navy)"/>
+          <circle cx="77" cy="33" r="8" fill="var(--navy)"/>
+          <circle cx="99" cy="33" r="8" fill="var(--navy)"/>
+          <circle cx="121" cy="33" r="8" fill="var(--navy)"/>
+          <circle cx="143" cy="33" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="33" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="33" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="33" r="8" fill="var(--arc-pale)"/>
+          <circle cx="11" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="33" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="55" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="77" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="99" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="121" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="143" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="55" r="8" fill="var(--arc-pale)"/>
+          <circle cx="11" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="33" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="55" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="77" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="99" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="121" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="143" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="77" r="8" fill="var(--arc-pale)"/>
+          <circle cx="11" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="33" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="55" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="77" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="99" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="121" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="143" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="99" r="8" fill="var(--arc-pale)"/>
+          <circle cx="11" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="33" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="55" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="77" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="99" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="121" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="143" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="121" r="8" fill="var(--arc-pale)"/>
+          <circle cx="11" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="33" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="55" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="77" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="99" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="121" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="143" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="143" r="8" fill="var(--arc-pale)"/>
+          <circle cx="11" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="33" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="55" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="77" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="99" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="121" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="143" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="165" r="8" fill="var(--arc-pale)"/>
+          <circle cx="11" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="33" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="55" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="77" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="99" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="121" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="143" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="187" r="8" fill="var(--arc-pale)"/>
+          <circle cx="11" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="33" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="55" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="77" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="99" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="121" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="143" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="165" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="187" cy="209" r="8" fill="var(--arc-pale)"/>
+          <circle cx="209" cy="209" r="8" fill="var(--arc-pale)"/>
+        </svg>
+        <p class="stat-caption"><b>16 in every 100</b> people worldwide have a disability &mdash; about 1.3 billion people.</p>
+      </div>
+
+      <div class="stat-bars">
+        <h3 class="vh">People on the move</h3>
+        <div class="bar-row">
+          <p class="bar-label"><b>304 million</b> international migrants worldwide</p>
+          <div class="bar" style="--w:100%"><span></span></div>
+        </div>
+        <div class="bar-row">
+          <p class="bar-label"><b>167.7 million</b> are international labour migrants</p>
+          <div class="bar" style="--w:55%"><span></span></div>
+        </div>
+        <div class="bar-row">
+          <p class="bar-label"><b>38 million</b> refugees displaced across borders</p>
+          <div class="bar" style="--w:12.5%"><span></span></div>
+        </div>
+      </div>
     </div>
+
     <p class="source">Figures drawn from International Labour Organization (2026) <a href="https://www.ilo.org/sites/default/files/2026-02/Technical%20brief%20on%20Fair%20Recruitment%20of%20Migrant%20Workers%20with%20Disabilities.pdf" target="_blank" rel="noopener">Technical report on fair recruitment of migrant workers with disabilities<span class="vh"> (opens in a new tab)</span></a>. The overlap between these populations is unknown, and remains under-recognised in policy design, data systems and global review processes.</p>
 
     <p style="margin-top:2.5rem"><strong>The timing is deliberate.</strong> The twentieth anniversary of the CRPD converges with the International Migration Review Forum in May 2026, the subsequent Global Refugee Forum cycle, and the annual International Labour Conference. That convergence is a strategic window to move from recognition to implementation.</p>
@@ -391,6 +538,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <section id="aims">
   <div class="wrap">
     <div class="section-head">
+      <svg class="arc-mark" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
+        <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
+      </svg>
       <p class="eyebrow">Objectives</p>
       <h2>What the Forum aims to do</h2>
       <p class="lede">Central to the forum is addressing how disability discrimination and ableism become embedded in labour migration and asylum laws, procedures and institutions &mdash; and identifying the practical reforms that remove them.</p>
@@ -422,6 +573,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <section id="agenda" class="tinted">
   <div class="wrap">
     <div class="section-head">
+      <svg class="arc-mark" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
+        <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
+      </svg>
       <p class="eyebrow">Agenda</p>
       <h2>Five sessions across two days</h2>
       <p class="lede">Each session will include contributions from experts by experience and people working in solidarity, with time for discussion. Interpretation, International Sign and live captioning will run throughout.</p>
@@ -657,6 +812,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <section id="action" class="tinted">
   <div class="wrap">
     <div class="section-head">
+      <svg class="arc-mark" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
+        <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
+      </svg>
       <p class="eyebrow">From dialogue to action</p>
       <h2>What the forum produces</h2>
     </div>
@@ -668,30 +827,38 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <section id="consortium">
   <div class="wrap">
     <div class="section-head">
+      <svg class="arc-mark" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
+        <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
+      </svg>
       <p class="eyebrow">The consortium</p>
       <h2>Four networks. Three regions. One agenda.</h2>
       <p class="lede">This will be the first global event on disability in labour migration and refugee governance designed, convened and led by OPDs &mdash; including networks representing migrants and refugees with disabilities themselves. Lived experience is not consultative here; it sets the agenda.</p>
     </div>
     <ul class="orgs">
       <li class="org">
+        <img class="org-logo" src="images/gnrd.png" alt="Global Network of Refugees with Disabilities logo" width="240" height="240" loading="lazy">
         <h3>Global Network of Refugees with Disabilities</h3>
         <p class="focal">GNRD &middot; Focal point: Julius Ntobuah</p>
         <p>Empowers refugee-led organisations to access advocacy opportunities at national, regional and global levels and to raise funds for their initiatives, amplifying their voices in global policy and humanitarian response.</p>
         <a href="https://gnrd.ngo/" target="_blank" rel="noopener">gnrd.ngo<span class="vh"> (opens in a new tab)</span></a>
       </li>
       <li class="org">
+        <img class="org-logo" src="images/kdf.png" alt="Korean Disability Forum logo" width="240" height="240" loading="lazy">
         <h3>Korean Disability Forum</h3>
         <p class="focal">KDF &middot; Focal point: Hanbyol Choi</p>
         <p>An umbrella organisation of 18 national disabled people's organisations. KDF monitors national implementation of UN human rights treaties, in particular the CRPD, and bridges DPOs across borders.</p>
         <a href="https://thekdf.org/" target="_blank" rel="noopener">thekdf.org<span class="vh"> (opens in a new tab)</span></a>
       </li>
       <li class="org">
+        <img class="org-logo" src="images/dmn.png" alt="Disability Migration Network logo" width="240" height="240" loading="lazy">
         <h3>Disability Migration Network</h3>
         <p class="focal">DMN &middot; Focal points: Dr. Jun Bernandino, Karla Henson, Ben Thatcher</p>
         <p>An OPD-led network advancing disability-responsive migration in policy and practice, focused on the right to freedom of movement for persons with disabilities.</p>
         <a href="https://disabilitymigrationnetwork.com/" target="_blank" rel="noopener">disabilitymigrationnetwork.com<span class="vh"> (opens in a new tab)</span></a>
       </li>
       <li class="org">
+        <img class="org-logo" src="images/damn.png" alt="Disability and Migration Network logo" width="240" height="240" loading="lazy">
         <h3>Disability and Migration Network</h3>
         <p class="focal">DAMN &middot; Focal point: Rebecca Yeo</p>
         <p>A network of Disabled People's Organisations, migrant justice organisations and allies. Working collaboratively we share experiences and knowledge, seeking to build solidarity and resistance to the disabling impact of restrictions imposed on people with precarious migration status.</p>
@@ -713,6 +880,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <section id="access" class="access">
   <div class="wrap">
     <div class="section-head">
+      <svg class="arc-mark" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
+        <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#A8C6E8" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="10" cy="56" r="7" fill="#A8C6E8"/>
+      </svg>
       <p class="eyebrow">Accessibility</p>
       <h2>Participation is the point</h2>
       <p class="lede">A forum about disabling systems cannot itself be one. Access provisions are built into the forum's design and budget from the start, not added on request.</p>
@@ -744,6 +915,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <section id="register">
   <div class="wrap">
     <div class="section-head">
+      <svg class="arc-mark" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
+        <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
+      </svg>
       <p class="eyebrow">Register your interest</p>
       <h2>Be first to know when registration opens</h2>
       <p class="lede">The forum is free to attend. Leave your details and we will send you the agenda, registration link and access arrangements as soon as they are confirmed.</p>
@@ -836,6 +1011,16 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { rootMargin: '-45% 0px -50% 0px' });
 sections.forEach(s => observer.observe(s));
+
+// Scroll position, shown along the bottom edge of the sticky header.
+const progress = document.getElementById('progress-bar');
+const setProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = `${(window.scrollY / scrollable) * 100}%`;
+};
+window.addEventListener('scroll', setProgress, { passive: true });
+window.addEventListener('resize', setProgress);
+setProgress();
 
 // Speaker grid, built from the agenda so each name is edited in one place only.
 const people = new Map();
