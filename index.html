@@ -89,27 +89,38 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0}
 .brand svg{width:2.4rem;height:auto;overflow:visible}
 .brand span{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:.02em;color:var(--navy)}
-.nav ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav ul{display:flex;gap:0;list-style:none;margin:0;padding:0;flex-wrap:nowrap}
 .nav a.navlink{
-  font-family:var(--display);font-weight:600;font-size:.8125rem;letter-spacing:.1em;
+  font-family:var(--display);font-weight:600;font-size:.8125rem;letter-spacing:.05em;
   text-transform:uppercase;text-decoration:none;color:var(--navy);
-  padding:.55rem .7rem;border-radius:.4rem;display:block;
+  white-space:nowrap;
+  padding:.55rem .55rem;border-radius:.4rem;display:block;
 }
 .nav a.navlink:hover{background:var(--arc-pale)}
 .nav a.navlink[aria-current="true"]{background:var(--navy);color:#fff}
-.nav a.navlink.easy{border:2px solid var(--dot);color:var(--dot)}
-.nav a.navlink.easy:hover{background:var(--dot);color:#fff}
-@media (max-width:66rem){.nav a.navlink.easy{border:0;border-bottom:1px solid var(--rule)}}
+.nav-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.easy-link{
+  display:flex;align-items:center;min-height:2.75rem;
+  font-family:var(--display);font-weight:700;font-size:.8125rem;letter-spacing:.1em;
+  text-transform:uppercase;text-decoration:none;
+  color:var(--dot);border:2px solid var(--dot);border-radius:2rem;padding:0 1rem;white-space:nowrap;
+  transition:background .18s ease,color .18s ease;
+}
+.easy-link:hover{background:var(--dot);color:#fff}
+.brand{order:1}
+#primary-nav{order:2}
+.nav-actions{order:3}
 .nav-toggle{
   display:none;font-family:var(--display);font-weight:700;font-size:.875rem;
   letter-spacing:.08em;text-transform:uppercase;
   background:var(--navy);color:#fff;border:0;border-radius:.5rem;padding:.6rem 1rem;cursor:pointer;
 }
-@media (max-width:66rem){
+@media (max-width:75rem){
   .nav-toggle{display:block}
   #primary-nav{display:none;width:100%;padding-bottom:1rem}
   #primary-nav.open{display:block}
   .nav-inner{flex-wrap:wrap}
+  #primary-nav{order:4}
   .nav ul{flex-direction:column;gap:0}
   .nav a.navlink{padding:.7rem .5rem;border-bottom:1px solid var(--rule)}
 }
@@ -292,7 +303,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       </svg>
       <span>GFDMD</span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <div class="nav-actions">
+      <a class="easy-link" href="easy-read.html">Easy Read</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
     <nav id="primary-nav" aria-label="Section navigation">
       <ul>
         <li><a class="navlink" href="#about">About</a></li>
@@ -304,7 +318,6 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         <li><a class="navlink" href="#consortium">Consortium</a></li>
         <li><a class="navlink" href="#access">Access</a></li>
         <li><a class="navlink" href="#register">Register</a></li>
-        <li><a class="navlink easy" href="easy-read.html">Easy Read</a></li>
       </ul>
     </nav>
   </div>
