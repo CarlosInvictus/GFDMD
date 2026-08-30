@@ -145,6 +145,12 @@ section{padding-block:2.75rem;border-bottom:1px solid var(--rule)}
 }
 
 /* ---------- call to action ---------- */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.top-cta{margin-top:2rem;padding-top:2rem;border-top:2px solid var(--rule)}
+.top-cta p{margin-bottom:.85rem;max-width:34ch;font-weight:700;color:var(--navy)}
+.top-cta .small{font-weight:400;font-size:1.1875rem;color:#41597B;margin:.85rem 0 0}
+.btn-dark{background:var(--navy);color:#fff;box-shadow:0 6px 20px rgba(31,53,87,.25)}
+.btn-dark:hover{background:var(--navy-deep);color:#fff}
 .cta{background:var(--navy);color:#fff;border-radius:1rem;padding:2rem;margin-top:1.5rem}
 .cta h3,.cta p{color:#fff}
 .btn{
@@ -181,9 +187,15 @@ footer p{max-width:44ch}
   <div class="wrap">
     <p class="badge">Easy Read</p>
     <h1>The Global Forum on Disability, Migration and Forced Displacement</h1>
-    <p class="wide">This page tells you about a big online meeting.</p>
-    <p class="wide">The meeting is on 23 and 24 September 2026.</p>
+    <p class="wide">This page tells you about an online meeting called the Global Forum on Disability, Migration and Forced Displacement.</p>
+    <p class="wide">The meeting is on 23 September and 24 September 2026.</p>
     <p class="wide">It is free to join.</p>
+
+    <div class="top-cta">
+      <p>You need to sign up before the meeting.</p>
+      <a class="btn btn-dark" href="https://us06web.zoom.us/webinar/register/WN_zuUvyVQgTWKMEHrPRwT3Ig#/registration" target="_blank" rel="noopener">Register to the Forum<span class="vh"> (opens in a new tab)</span></a>
+      <p class="small">The sign up form is on a website called Zoom. It opens in a new tab.</p>
+    </div>
   </div>
 </div>
 
@@ -207,7 +219,6 @@ footer p{max-width:44ch}
       <li><a href="#running">Who is running the forum</a></li>
       <li><a href="#help">Help to join in</a></li>
       <li><a href="#join">How to sign up</a></li>
-      <li><a href="#site">About this website</a></li>
     </ol>
   </div>
 
@@ -216,12 +227,12 @@ footer p{max-width:44ch}
     <h2>1. Words we use</h2>
     <p class="wide">Some words on this page are hard. Here is what they mean.</p>
     <ul class="word-list">
-      <li><b>Forum</b><span>A big meeting. People come together to talk about a problem.</span></li>
+      <li><b>Forum</b><span>A meeting with many people. People come together to talk about a problem.</span></li>
       <li><b>Migrant</b><span>Someone who leaves their country to live in another country. Many people move to find work.</span></li>
       <li><b>Refugee</b><span>Someone who had to leave their country because it was not safe to stay.</span></li>
-      <li><b>Disabled people</b><span>People who have a disability. Some disabilities you can see. Some you cannot see.</span></li>
-      <li><b>OPD</b><span>An organisation of persons with disabilities. It is a group run by disabled people, for disabled people.</span></li>
-      <li><b>CRPD</b><span>A promise that countries around the world made. They promised to respect the rights of disabled people.</span></li>
+      <li><b>Persons with disabilities</b><span>People who have a disability. Some disabilities you can see. Some you cannot see.</span></li>
+      <li><b>OPD</b><span>An organisation of persons with disabilities. It is a group run by persons with disabilities, for persons with disabilities.</span></li>
+      <li><b>CRPD</b><span>A promise that countries around the world made. They promised to respect the rights of persons with disabilities.</span></li>
       <li><b>Interpreter</b><span>Someone who says the words again in your language, so you can understand.</span></li>
       <li><b>International Sign</b><span>A sign language that deaf people from different countries can use together.</span></li>
       <li><b>Captions</b><span>Words on the screen that show what people are saying.</span></li>
@@ -235,15 +246,15 @@ footer p{max-width:44ch}
     <div class="block">
       <div class="pic" data-picto="meeting"><p class="todo">Picture: group meeting</p></div>
       <div class="words">
-        <p>This forum is a big online meeting.</p>
+        <p>This forum is an online meeting with many people.</p>
         <p>People from all over the world will join.</p>
       </div>
     </div>
 
     <div class="block">
-      <div class="pic" data-picto="wheelchair-suitcase"><p class="todo">Picture: disabled person travelling</p></div>
+      <div class="pic" data-picto="wheelchair-suitcase"><p class="todo">Picture: persons with disabilities travelling</p></div>
       <div class="words">
-        <p>The meeting is about disabled people who move to another country.</p>
+        <p>The meeting is about persons with disabilities who move to another country.</p>
         <p>Some people move to find work.</p>
         <p>Some people move because it is not safe at home.</p>
       </div>
@@ -252,7 +263,7 @@ footer p{max-width:44ch}
     <div class="block">
       <div class="pic" data-picto="barrier"><p class="todo">Picture: barrier or blocked path</p></div>
       <div class="words">
-        <p>Moving to another country can be very hard for disabled people.</p>
+        <p>Moving to another country can be very hard for persons with disabilities.</p>
         <p>The rules can stop them getting work.</p>
         <p>The rules can stop them getting help they need.</p>
       </div>
@@ -261,8 +272,8 @@ footer p{max-width:44ch}
     <div class="block">
       <div class="pic" data-picto="leader"><p class="todo">Picture: person leading a group</p></div>
       <div class="words">
-        <p>Disabled people are running this forum.</p>
-        <p>This is important. It means disabled people decide what we talk about.</p>
+        <p>Persons with disabilities are running this forum.</p>
+        <p>This is important. It means persons with disabilities decide what we talk about.</p>
       </div>
     </div>
   </section>
@@ -315,14 +326,14 @@ footer p{max-width:44ch}
       <div class="pic" data-picto="rules"><p class="todo">Picture: book of rules or law</p></div>
       <div class="words">
         <p>Countries have rules about people moving between countries.</p>
-        <p>Countries also made promises about disabled people's rights.</p>
+        <p>Countries also made promises about the rights of persons with disabilities.</p>
       </div>
     </div>
 
     <div class="block">
       <div class="pic" data-picto="forgotten"><p class="todo">Picture: person left out of group</p></div>
       <div class="words">
-        <p>But the rules often forget disabled people.</p>
+        <p>But the rules often forget persons with disabilities.</p>
         <p>People who make the rules do not always think about disability.</p>
       </div>
     </div>
@@ -330,7 +341,7 @@ footer p{max-width:44ch}
     <div class="block">
       <div class="pic" data-picto="sad-person"><p class="todo">Picture: person feeling unwell or upset</p></div>
       <div class="words">
-        <p>Some people become disabled while they are moving.</p>
+        <p>Some people get a disability while they are moving.</p>
         <p>This can happen because of violence.</p>
         <p>This can happen because they are locked up.</p>
         <p>This can happen because they cannot see a doctor.</p>
@@ -344,16 +355,6 @@ footer p{max-width:44ch}
         <p>We want to change that.</p>
       </div>
     </div>
-
-    <div class="block">
-      <div class="pic" data-picto="birthday"><p class="todo">Picture: anniversary or celebration</p></div>
-      <div class="words">
-        <h3>Why this year</h3>
-        <p>20 years ago, countries made a promise about disabled people's rights.</p>
-        <p>This year, world leaders will meet to talk about people moving between countries.</p>
-        <p>This is a good time to ask them to keep their promise.</p>
-      </div>
-    </div>
   </section>
 
   <!-- ===== NUMBERS ===== -->
@@ -363,13 +364,13 @@ footer p{max-width:44ch}
       <p>304 million people live in a country they were not born in.</p>
       <p>167 million of them moved to find work.</p>
       <p>38 million people had to leave their country because it was not safe.</p>
-      <p>1 billion 300 million people in the world are disabled.</p>
+      <p>1 billion 300 million people in the world are persons with disabilities.</p>
       <p>That is about 16 people out of every 100 people.</p>
     </div>
     <div class="block">
       <div class="pic" data-picto="question"><p class="todo">Picture: question mark</p></div>
       <div class="words">
-        <p>Nobody knows how many disabled people move to another country.</p>
+        <p>Nobody knows how many persons with disabilities move to another country.</p>
         <p>Nobody counts them properly.</p>
         <p>This is a problem. It is hard to help people you do not count.</p>
       </div>
@@ -384,9 +385,9 @@ footer p{max-width:44ch}
     <div class="block">
       <div class="pic" data-picto="link"><p class="todo">Picture: two links joined</p></div>
       <div class="words">
-        <h3>1. Make the rules fit together</h3>
-        <p>There are lots of different rules and promises.</p>
-        <p>We want them to say the same thing about disabled people.</p>
+        <h3>1. Join up the rules</h3>
+        <p>We want to look at the migration rules together.</p>
+        <p>We want to see how they help persons with disabilities, and how they do not.</p>
       </div>
     </div>
 
@@ -394,17 +395,17 @@ footer p{max-width:44ch}
       <div class="pic" data-picto="eye"><p class="todo">Picture: eye, looking</p></div>
       <div class="words">
         <h3>2. Show what goes wrong</h3>
-        <p>We want the people in charge to see the problems.</p>
-        <p>Then they can fix the rules and the services.</p>
+        <p>We want people to hear real stories.</p>
+        <p>We want to show how the rules hurt persons with disabilities.</p>
       </div>
     </div>
 
     <div class="block">
       <div class="pic" data-picto="microphone"><p class="todo">Picture: person with microphone</p></div>
       <div class="words">
-        <h3>3. Support disabled people's groups to lead</h3>
-        <p>Disabled people's groups must help make the decisions.</p>
-        <p>This includes groups run by migrants and refugees.</p>
+        <h3>3. Listen to persons with disabilities</h3>
+        <p>Persons with disabilities must be part of the talking.</p>
+        <p>Not just listened to. Part of deciding.</p>
       </div>
     </div>
 
@@ -413,7 +414,6 @@ footer p{max-width:44ch}
       <div class="words">
         <h3>4. Say what needs to change</h3>
         <p>We want a clear list of things that must get better.</p>
-        <p>Big meetings in the future will use our list.</p>
       </div>
     </div>
   </section>
@@ -424,25 +424,22 @@ footer p{max-width:44ch}
     <p class="day-label">There are 2 talks on Day 1</p>
 
     <div class="talk">
-      <p class="time">8 o'clock in the morning to 10 o'clock</p>
       <h3>Talk 1: How we got here</h3>
       <p>We look back at the past.</p>
-      <p>Disabled people have been treated badly for a long time.</p>
+      <p>Persons with disabilities have been treated badly for a long time.</p>
       <p>We look at how this still happens today.</p>
-      <p>We look at what the rules say, and how the rules could help.</p>
-      <p class="lead">Led by Catalina Devandas Aguilar. She used to work for the United Nations on disabled people's rights.</p>
+      <p>We look at what the migration rules say, and how the rules could help.</p>
+      <p class="lead">Led by Catalina Devandas Aguilar. She used to work for the United Nations on disability rights.</p>
     </div>
 
     <div class="talk">
-      <p class="time">10 o'clock to half past 10</p>
-      <h3>Break</h3>
+      <h3>30 minute break</h3>
       <p>A rest. You can get a drink or move around.</p>
     </div>
 
     <div class="talk">
-      <p class="time">Half past 10 to half past 12</p>
-      <h3>Talk 2: Disabled people and work in another country</h3>
-      <p>We talk about disabled people who move to find a job.</p>
+      <h3>Talk 2: Persons with disabilities and work in another country</h3>
+      <p>We talk about persons with disabilities who move to find a job.</p>
       <p>It can be hard to get hired.</p>
       <p>It can be hard to be safe at work.</p>
       <p>It can be hard to get help if something goes wrong.</p>
@@ -457,63 +454,47 @@ footer p{max-width:44ch}
     <p class="day-label">There are 3 talks on Day 2</p>
 
     <div class="talk">
-      <p class="time">8 o'clock in the morning to half past 9</p>
-      <h3>Talk 3: Helping disabled people's groups get stronger</h3>
-      <p>This talk is training for disabled people's groups.</p>
-      <p>It includes groups run by migrants and refugees.</p>
-      <p>We learn how to talk to the people who make the rules.</p>
-      <p>We learn how to join big meetings about migration.</p>
+      <h3>Talk 3: What we can learn from groups of persons with disabilities</h3>
+      <p>Groups of persons with disabilities have fought for change for many years.</p>
+      <p>We talk about what worked.</p>
+      <p>We talk about how groups can speak to the people who make the rules.</p>
+      <p class="lead">Led by Atty. Rhealeth Ramos from the National Council on Disability Affairs in the Philippines.</p>
     </div>
 
     <div class="talk">
-      <p class="time">Half past 9 to 10 o'clock</p>
-      <h3>Break</h3>
+      <h3>30 minute break</h3>
       <p>A rest. You can get a drink or move around.</p>
     </div>
 
     <div class="talk">
-      <p class="time">10 o'clock to half past 11</p>
-      <h3>Talk 4: Disabled people in refugee camps</h3>
+      <h3>Talk 4: Persons with disabilities in refugee camps</h3>
       <p>A refugee camp is a place where people live after they leave their country.</p>
-      <p>Life in a camp is very hard for disabled people.</p>
-      <p>We hear from disabled people who have lived in camps.</p>
+      <p>Life in a camp is very hard for persons with disabilities.</p>
+      <p>We hear from persons with disabilities who have lived in camps.</p>
       <p>They will tell us what needs to change.</p>
       <p class="lead">Led by Julius Ntobuah from the Global Network of Refugees with Disabilities.</p>
     </div>
 
     <div class="talk">
-      <p class="time">Half past 11 to 12 o'clock</p>
-      <h3>Break</h3>
+      <h3>30 minute break</h3>
       <p>A rest. You can get a drink or move around.</p>
     </div>
 
     <div class="talk">
-      <p class="time">12 o'clock to half past 1 in the afternoon</p>
       <h3>Talk 5: When the system makes people disabled</h3>
-      <p>This talk is about borders and border rules in rich countries.</p>
-      <p>The rules can hurt people who are already disabled.</p>
-      <p>The rules can also make people disabled while they are travelling.</p>
+      <p>This talk is about rich countries like the United Kingdom and the United States of America.</p>
+      <p>The rules in these countries can stop people getting food, a home, or a doctor.</p>
+      <p>This can make people unwell.</p>
+      <p>We hear how persons with disabilities help each other and fight back.</p>
+      <p class="lead">Led by Rebecca Yeo from the Disability and Migration Network.</p>
     </div>
 
     <div class="block" style="margin-top:2rem">
       <div class="pic" data-picto="list"><p class="todo">Picture: list or timetable</p></div>
       <div class="words">
-        <h3>What happens in every talk</h3>
-        <p>Someone says hello and explains the talk.</p>
-        <p>You watch a short video. A disabled person tells their story.</p>
-        <p>3 or 4 people speak. Each one speaks for about 15 minutes.</p>
-        <p>There is a short break in the middle.</p>
-        <p>At the end there is time for questions.</p>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="pic" data-picto="choice"><p class="todo">Picture: person choosing</p></div>
-      <div class="words">
-        <p>Each talk is about 1 and a half hours to 2 hours long.</p>
-        <p>Both days are in the morning in Europe.</p>
-        <p>You can come to all the talks. You can come to only 1 talk. It is your choice.</p>
-        <p>You can see the exact times for every part on the main website.</p>
+        <p>Every talk has short breaks in the middle.</p>
+        <p>Every talk has time for questions.</p>
+        <p>You can see the full list of times on the main website.</p>
       </div>
     </div>
   </section>
@@ -523,23 +504,31 @@ footer p{max-width:44ch}
     <h2>9. Who is speaking</h2>
     <p class="wide">These people will speak at the forum.</p>
     <ul class="people">
-      <li><b>Catalina Devandas Aguilar</b><span>She works for the International Organization for Migration. She will lead Talk 1.</span></li>
-      <li><b>Amalia Gamio</b><span>She is on the United Nations group that checks how countries treat disabled people. She speaks in Talk 1.</span></li>
-      <li><b>Kaat Landuyt</b><span>She works for the International Labour Organization on people who move for work. She speaks in Talk 1.</span></li>
-      <li><b>Rebecca Napier-Moore</b><span>She works for the International Labour Organization. She will lead Talk 2.</span></li>
-      <li><b>Ben Thatcher</b><span>He helped start the Disability Migration Network. He speaks in Talk 2.</span></li>
-      <li><b>Jueon Lee</b><span>She is a lawyer in South Korea. She helps people go to court. She speaks in Talk 2.</span></li>
-      <li><b>Monika</b><span>She works for a disabled people's organisation in Cambodia. She speaks in Talk 3.</span></li>
-      <li><b>Julius Ntobuah</b><span>He leads the Global Network of Refugees with Disabilities. He speaks in Talk 3 and leads Talk 4.</span></li>
-      <li><b>Muluka-Anne Miti-Drummond</b><span>She works for the United Nations. Her job is the rights of people with albinism. She speaks in Talk 4.</span></li>
+      <li><b>Catalina Devandas Aguilar</b><span>She used to work for the United Nations on disability rights.</span></li>
+      <li><b>USEC Atty. Darlene R. Pajarito</b><span>She works for the government of the Philippines, on people who go abroad to work.</span></li>
+      <li><b>Ben Thatcher</b><span>He helped start the Disability Migration Network.</span></li>
+      <li><b>Amalia Gamio</b><span>She is on the United Nations group that checks how countries treat persons with disabilities.</span></li>
+      <li><b>Leana Podeszfa</b><span>She works for the United Nations on refugees. Her job is to include persons with disabilities.</span></li>
+      <li><b>Katerine Landuyt</b><span>She works for the International Labour Organization on people who move for work.</span></li>
+      <li><b>Rebecca Napier-Moore</b><span>She works for the International Labour Organization in Asia.</span></li>
+      <li><b>Matthew Hall</b><span>He works for a group of organisations of persons with disabilities in Australia.</span></li>
+      <li><b>Jueon Lee</b><span>She is a lawyer in South Korea. She helps people go to court.</span></li>
+      <li><b>Dr Eva Anna Duda-Mikulin</b><span>She is a teacher at a university in Poland.</span></li>
+      <li><b>Atty. Rhealeth Ramos</b><span>She works for the disability office of the government in the Philippines.</span></li>
+      <li><b>Jos&eacute; Maria Viera</b><span>He works for the International Disability Alliance.</span></li>
+      <li><b>Mak Monika</b><span>She leads a organisation of persons with disabilities in Cambodia.</span></li>
+      <li><b>Julius Ntobuah</b><span>He leads the Global Network of Refugees with Disabilities.</span></li>
+      <li><b>Rosa Maria</b><span>She works with groups of persons with disabilities in South America.</span></li>
+      <li><b>Muluka-Anne Miti-Drummond</b><span>She works for the United Nations. Her job is the rights of people with albinism.</span></li>
+      <li><b>Rebecca Yeo</b><span>She works with the Disability and Migration Network in the United Kingdom.</span></li>
     </ul>
 
     <div class="block" style="margin-top:2rem">
       <div class="pic" data-picto="waiting"><p class="todo">Picture: person waiting, more to come</p></div>
       <div class="words">
-        <p>More speakers are still being asked.</p>
-        <p>We will add their names later.</p>
-        <p>Some of them will be refugees and migrant workers with disabilities, telling their own story.</p>
+        <p>Some speakers are still being asked. We will add their names later.</p>
+        <p>Some speakers will not use their real name.</p>
+        <p>This is to keep them safe.</p>
       </div>
     </div>
   </section>
@@ -549,8 +538,8 @@ footer p{max-width:44ch}
     <h2>10. Who can come</h2>
     <p class="wide">Anyone can come. We would like these people to come:</p>
     <ul class="ticks">
-      <li>Disabled people who have moved to another country</li>
-      <li>Disabled people's organisations</li>
+      <li>Persons with disabilities who have moved to another country</li>
+      <li>Organisations of persons with disabilities</li>
       <li>People who make the rules about moving between countries</li>
       <li>People who work for the United Nations</li>
       <li>Groups for workers, and groups for bosses</li>
@@ -562,51 +551,34 @@ footer p{max-width:44ch}
 
   <!-- ===== AFTER ===== -->
   <section id="after">
-    <h2>11. What the forum produces</h2>
-    <p class="wide">We want 3 things to change because of this forum.</p>
-
+    <h2>11. What happens after the forum</h2>
     <div class="block">
-      <div class="pic" data-picto="understand"><p class="todo">Picture: person understanding</p></div>
+      <div class="pic" data-picto="plan"><p class="todo">Picture: writing a plan</p></div>
       <div class="words">
-        <p>People will understand disability better.</p>
-        <p>They will understand how it fits with the rules about moving countries.</p>
+        <p>We do not want to just talk.</p>
+        <p>We want things to change.</p>
       </div>
     </div>
-
     <div class="block">
-      <div class="pic" data-picto="fix"><p class="todo">Picture: fixing or mending</p></div>
+      <div class="pic" data-picto="document"><p class="todo">Picture: document or report</p></div>
       <div class="words">
-        <p>People who run these systems will be better at spotting problems.</p>
-        <p>They will be better at fixing them.</p>
+        <p>At the forum, people will say what needs to change most.</p>
+        <p>After the forum, we will write a plan.</p>
+        <p>The plan is called a Call to Action.</p>
+        <p>It will say what countries and organisations must do next.</p>
       </div>
     </div>
-
-    <div class="block">
-      <div class="pic" data-picto="leader"><p class="todo">Picture: person leading a group</p></div>
-      <div class="words">
-        <p>Disabled migrants and refugees will lead more.</p>
-        <p>Their groups will be stronger.</p>
-      </div>
-    </div>
-
-    <p class="wide" style="margin-top:2rem"><strong>We will also make these things:</strong></p>
-    <ul class="ticks">
-      <li>A list of things that must get better</li>
-      <li>Examples of what works well, to share with other people</li>
-      <li>Training so disabled people's groups are ready for the next big meeting</li>
-      <li>A report about the forum for everyone who helped</li>
-    </ul>
   </section>
 
   <!-- ===== WHO IS RUNNING IT ===== -->
   <section id="running">
     <h2>12. Who is running the forum</h2>
-    <p class="wide">4 groups are running the forum together. All 4 groups are run by disabled people.</p>
+    <p class="wide">4 groups are running the forum together. All 4 groups are run by persons with disabilities.</p>
     <ul class="people">
-      <li><b>Global Network of Refugees with Disabilities</b><span>They help groups of disabled refugees speak up and get money for their work.</span></li>
-      <li><b>Korean Disability Forum</b><span>They are 18 disabled people's groups in South Korea working together. They check that the government keeps its promises.</span></li>
-      <li><b>Disability Migration Network</b><span>They work on the right of disabled people to move to another country.</span></li>
-      <li><b>Disability and Migration Network</b><span>They believe the rules that stop people moving countries are unfair. They believe the rules hurt disabled people and are racist. They work together to change this.</span></li>
+      <li><b>Global Network of Refugees with Disabilities</b><span>They help groups of refugees with disabilities speak up and get money for their work.</span></li>
+      <li><b>Korean Disability Forum</b><span>They are 18 groups of persons with disabilities in South Korea working together. They check that the government keeps its promises.</span></li>
+      <li><b>Disability Migration Network</b><span>They work on the right of persons with disabilities to move to another country.</span></li>
+      <li><b>Disability and Migration Network</b><span>They are groups of persons with disabilities and migrant groups in the United Kingdom. They help each other and fight unfair rules.</span></li>
     </ul>
 
     <div class="block" style="margin-top:2rem">
@@ -630,8 +602,8 @@ footer p{max-width:44ch}
       <div class="words">
         <h3>Interpreters</h3>
         <p>Someone will say the words in your language.</p>
-        <p>We will have 7 languages:</p>
-        <p>French, Spanish, Swahili, Korean, Lao, Myanmar and Khmer.</p>
+        <p>We will have 10 languages:</p>
+        <p>Spanish, French, Arabic, Swahili, Korean, Vietnamese, Thai, Lao, Myanmar and Khmer.</p>
       </div>
     </div>
 
@@ -674,7 +646,7 @@ footer p{max-width:44ch}
   </section>
 
   <!-- ===== JOIN ===== -->
-  <section id="join">
+  <section id="join" style="border-bottom:0">
     <h2>14. How to sign up</h2>
 
     <div class="block">
@@ -701,30 +673,7 @@ footer p{max-width:44ch}
       <a class="btn" href="https://us06web.zoom.us/webinar/register/WN_zuUvyVQgTWKMEHrPRwT3Ig#/registration" target="_blank" rel="noopener">Go to the sign up form<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> (opens in a new tab)</span></a>
     </div>
 
-  </section>
-
-  <!-- ===== THIS WEBSITE ===== -->
-  <section id="site" style="border-bottom:0">
-    <h2>15. About this website</h2>
-
-    <div class="block">
-      <div class="pic" data-picto="website"><p class="todo">Picture: website on a screen</p></div>
-      <div class="words">
-        <p>We tried hard to make this website easy to use.</p>
-        <p>Everything is on one page. You do not have to click through lots of menus.</p>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="pic" data-picto="keyboard"><p class="todo">Picture: keyboard</p></div>
-      <div class="words">
-        <p>You can use this website with a keyboard. You do not need a mouse.</p>
-        <p>It works with screen readers.</p>
-        <p>Nothing on the page moves or flashes if you have asked your computer to stop moving pictures.</p>
-      </div>
-    </div>
-
-    <div class="block">
+    <div class="block" style="margin-top:2.5rem">
       <div class="pic" data-picto="question-help"><p class="todo">Picture: asking a question</p></div>
       <div class="words">
         <h3>If you need help</h3>
@@ -770,6 +719,8 @@ const PICTOS = {
   checklist: null,
   list: null,
   waiting: null,
+  plan: null,
+  document: null,
   'money-help': null,
   interpreter: null,
   'sign-language': null,
@@ -778,13 +729,7 @@ const PICTOS = {
   rest: null,
   form: null,
   email: null,
-  'question-help': null,
-  birthday: null,
-  choice: null,
-  website: null,
-  keyboard: null,
-  understand: null,
-  fix: null
+  'question-help': null
 };
 
 document.querySelectorAll('.pic[data-picto]').forEach(box => {
