@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Global Forum on Disability, Migration and Forced Displacement</title>
 <meta name="description" content="A global forum on disability-responsive labour migration and refugee governance, convened and led by organisations of persons with disabilities. 23-24 September 2026, online, free to attend.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.gfdmd.org/">
-<meta property="og:title" content="Global Forum on Disability, Migration and Forced Displacement">
-<meta property="og:description" content="23–24 September 2026. Online. Free to attend. Convened and led by organisations of persons with disabilities.">
-<meta property="og:image" content="https://www.gfdmd.org/images/share.png">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
@@ -158,22 +152,39 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
   width:min(46%,32rem);height:auto;opacity:.9;pointer-events:none;overflow:visible;
 }
 @media (max-width:60rem){.hero-arc{position:static;transform:none;width:min(80%,20rem);margin-top:2.5rem;opacity:1}}
-.hero-meta{display:flex;flex-wrap:wrap;gap:.6rem;margin:2rem 0 2.25rem;padding:0;list-style:none}
+.hero-meta{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;
+  margin:1.75rem 0 2.5rem;padding:0;list-style:none;
+}
 .hero-meta li{
-  font-family:var(--display);font-weight:600;font-size:.8125rem;letter-spacing:.09em;text-transform:uppercase;
-  border:1px solid rgba(168,198,232,.55);color:var(--arc-light);
-  padding:.45rem .85rem;border-radius:2rem;
+  display:flex;align-items:center;gap:1rem;
+  font-family:var(--display);font-weight:600;font-size:.9375rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--arc-light);
+}
+.hero-meta li:not(:last-child)::after{
+  content:"";width:4px;height:4px;border-radius:50%;
+  background:rgba(168,198,232,.6);
+}
+.hero-meta li:first-child{
+  font-size:1.0625rem;color:#fff;font-weight:700;letter-spacing:.05em;
 }
 .btn{
-  display:inline-block;font-family:var(--display);font-weight:700;font-size:.9375rem;
-  letter-spacing:.09em;text-transform:uppercase;text-decoration:none;
-  background:var(--arc-light);color:var(--navy-deep);
-  padding:.9rem 1.75rem;border-radius:2rem;border:2px solid var(--arc-light);
-  transition:background .18s ease,color .18s ease;cursor:pointer;
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-family:var(--display);font-weight:700;font-size:1.0625rem;
+  letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+  background:#fff;color:var(--navy-deep);
+  padding:1.15rem 2.25rem;border-radius:2.5rem;border:2px solid #fff;
+  box-shadow:0 6px 22px rgba(0,0,0,.22);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;cursor:pointer;
 }
-.btn:hover{background:transparent;color:var(--arc-light)}
-.btn-solid{background:var(--navy);color:#fff;border-color:var(--navy)}
-.btn-solid:hover{background:transparent;color:var(--navy)}
+.btn::after{content:"\2192";font-size:1.2em;line-height:1}
+.btn:hover{background:var(--arc-light);border-color:var(--arc-light);transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.28)}
+.btn-note{
+  font-family:var(--body);font-size:.9375rem;color:var(--arc-light);
+  margin:.9rem 0 0;letter-spacing:0;text-transform:none;
+}
+.btn-solid{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 6px 22px rgba(31,53,87,.25)}
+.btn-solid:hover{background:var(--navy-deep);border-color:var(--navy-deep);color:#fff}
 
 /* ---------- figures ---------- */
 .stat-panel{
@@ -370,7 +381,8 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <li>Free to attend</li>
       <li>OPD-led</li>
     </ul>
-    <a class="btn" href="https://us06web.zoom.us/webinar/register/WN_zuUvyVQgTWKMEHrPRwT3Ig#/registration" target="_blank" rel="noopener">Register your interest<span class="vh"> (opens in a new tab)</span></a>
+    <a class="btn" href="https://us06web.zoom.us/webinar/register/WN_zuUvyVQgTWKMEHrPRwT3Ig#/registration" target="_blank" rel="noopener">Register to the Forum<span class="vh"> (opens in a new tab)</span></a>
+    <p class="btn-note">Registration is open and takes a couple of minutes.</p>
   </div>
   <svg class="hero-arc" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
     <path class="draw" pathLength="1" d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
@@ -389,7 +401,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       </svg>
       <h2 class="eyebrow">About the forum</h2>
     </div>
-    <p class="lede">Migrant workers and refugees with disabilities remain marginalised within mainstream migration and refugee governance. The intersection of disability and migration is insufficiently understood and inadequately addressed across policy, programming and global review processes.</p>
+    <p>Migrant workers and refugees with disabilities remain marginalised within mainstream migration and refugee governance. The intersection of disability and migration is insufficiently understood and inadequately addressed across policy, programming and global review processes.</p>
     <p>Persons with disabilities face compounding barriers: legal status, the medicalisation and stigmatisation of disability, and access to regular pathways, decent work, essential services, protection and justice. These are structural barriers, not individual misfortunes &mdash; and without disability-responsive approaches to how disability is conceptualised and legislated for, they will deepen.</p>
     <p>A newly formed transnational consortium of four disability-led and disability-focused migration networks &mdash; spanning Asia, Africa and Europe &mdash; is convening this forum to advance evidence, social dialogue and practical solutions that support implementation of the Convention on the Rights of Persons with Disabilities (CRPD), International Labour Standards, refugee-related initiatives, the Global Compact for Safe, Orderly and Regular Migration (GCM) and the Global Compact on Refugees (GCR).</p>
   </div>
@@ -591,11 +603,16 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
     <div class="tz-bar">
       <label for="tz">Show times in</label>
       <select id="tz">
-        <option value="60" selected>Central European Time (UTC+1)</option>
-        <option value="0">UK &mdash; London (UTC+0)</option>
-        <option value="180">East Africa &mdash; Nairobi (UTC+3)</option>
-        <option value="480">Philippines &mdash; Manila (UTC+8)</option>
-        <option value="540">Korea &mdash; Seoul (UTC+9)</option>
+        <option value="-420">Los Angeles &mdash; PDT (UTC&minus;7)</option>
+        <option value="-240">New York &mdash; EDT (UTC&minus;4)</option>
+        <option value="60" selected>UK &mdash; London, BST (UTC+1)</option>
+        <option value="120">Geneva &mdash; CEST (UTC+2)</option>
+        <option value="120">Sweden &mdash; CEST (UTC+2)</option>
+        <option value="180">Uganda &mdash; EAT (UTC+3)</option>
+        <option value="420">Thailand &mdash; ICT (UTC+7)</option>
+        <option value="480">Philippines &mdash; PHT (UTC+8)</option>
+        <option value="540">Korea &mdash; KST (UTC+9)</option>
+        <option value="600">Sydney &mdash; AEST (UTC+10)</option>
       </select>
     </div>
 
@@ -608,7 +625,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
           <svg class="track-arc" viewBox="0 0 100 62" aria-hidden="true" focusable="false"><path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="10" stroke-linecap="round"/><circle cx="10" cy="56" r="7.5" fill="#4E86C6"/></svg>
           <span class="sess">
             <span class="sess-time" data-start="480" data-end="600">08:00&ndash;10:00</span>
-            Session 1 &middot; Historical overview of disability and migration
+            Session 1 &middot; Disability in Migration and Forced Displacement: The Foundations
           </span>
         </summary>
         <div class="track-body">
@@ -741,17 +758,17 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         </summary>
         <div class="track-body">
           <p>How border regimes, procedures and institutional arrangements disable the people moving through them &mdash; both those already disabled when the journey begins and those the system disables along the way, with contributions from members of the Disability and Migration Network (DAMN) in the UK and the Disability and Immigration Taskforce of Illinois (DITI) in the USA. We will explore: the current context and how we got here; the disabling impact of immigration policy that prevents access to essential services and support; collective action and resistance supporting people's survival; and how to increase solidarity and build alternatives to current disabling systems.</p>
-          <p class="mod" data-name="Rebecca Yeo" data-org="Disability and Migration Network (DAMN)" data-mod>Moderated by <strong>Rebecca Yeo</strong>, Disability and Migration Network (DAMN)</p>
+          <p class="mod" data-name="Dr Rebecca Yeo" data-org="Disability and Migration Network (DAMN)" data-mod>Moderated by <strong>Dr Rebecca Yeo</strong>, Disability and Migration Network (DAMN)</p>
           <table class="run">
             <caption class="vh">Run of show, Session 5</caption>
             <thead><tr><th scope="col">Time</th><th scope="col">Item</th></tr></thead>
             <tbody>
               <tr><td data-start="720" data-end="730">12:00&ndash;12:10</td><td>Housekeeping and welcome</td></tr>
               <tr><td data-start="730" data-end="740">12:10&ndash;12:20</td><td>The current context and how we got here</td></tr>
-              <tr><td data-start="740" data-end="750">12:20&ndash;12:30</td><td>Disabling immigration policies <span class="note">Disabled people describe experiences of restrictions imposed as part of immigration policy that prevent access to essential services and support</span></td></tr>
-              <tr><td data-start="750" data-end="765">12:30&ndash;12:45</td><td>Collective action, organising and resistance in the USA <span class="note">Disabled people organising in response to immigration raids in the USA</span></td></tr>
+              <tr><td data-start="740" data-end="750">12:20&ndash;12:30</td><td>Disabling immigration policies <span class="note">Persons with disabilities describe experiences of restrictions imposed as part of immigration policy that prevent access to essential services and support</span></td></tr>
+              <tr><td data-start="750" data-end="765">12:30&ndash;12:45</td><td>Collective action, organising and resistance in the USA <span class="note">Persons with disabilities organising in response to immigration raids in the USA</span></td></tr>
               <tr class="rest"><td data-start="765" data-end="770">12:45&ndash;12:50</td><td>Comfort break</td></tr>
-              <tr><td data-start="770" data-end="780">12:50&ndash;13:00</td><td>Disabled people surviving through solidarity in the UK asylum system</td></tr>
+              <tr><td data-start="770" data-end="780">12:50&ndash;13:00</td><td>Persons with disabilities surviving through solidarity in the UK asylum system</td></tr>
               <tr><td data-start="780" data-end="810">13:00&ndash;13:30</td><td>Open discussion across borders <span class="note">How to increase solidarity and build alternatives to current disabling systems</span></td></tr>
             </tbody>
           </table>
@@ -764,7 +781,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <div>
         <h3>Format</h3>
         <ul class="plain">
-          <li>Fully online across two mornings, Central European Time</li>
+          <li>Fully online across two mornings, UK time (BST, UTC+1)</li>
           <li>Sessions of 90 to 120 minutes, with comfort breaks throughout</li>
           <li>Recorded testimony from migrants and refugees with disabilities opens every session</li>
           <li>Programme still being finalised &mdash; some speakers to be announced</li>
@@ -853,7 +870,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         <img class="org-logo" src="images/kdf.png" alt="Korean Disability Forum logo" width="240" height="240" loading="lazy">
         <h3>Korean Disability Forum</h3>
         <p class="focal">KDF &middot; Focal point: Hanbyol Choi</p>
-        <p>An umbrella organisation of 18 national disabled people's organisations. KDF monitors national implementation of UN human rights treaties, in particular the CRPD, and bridges DPOs across borders.</p>
+        <p>An umbrella organisation of 18 national organisations of persons with disabilities. KDF monitors national implementation of UN human rights treaties, in particular the CRPD, and bridges DPOs across borders.</p>
         <a href="https://thekdf.org/" target="_blank" rel="noopener">thekdf.org<span class="vh"> (opens in a new tab)</span></a>
       </li>
       <li class="org">
@@ -867,7 +884,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         <img class="org-logo" src="images/damn.png" alt="Disability and Migration Network logo" width="240" height="240" loading="lazy">
         <h3>Disability and Migration Network</h3>
         <p class="focal">DAMN &middot; Focal point: Rebecca Yeo</p>
-        <p>A network of Disabled People's Organisations, migrant justice organisations and allies. Working collaboratively we share experiences and knowledge, seeking to build solidarity and resistance to the disabling impact of restrictions imposed on people with precarious migration status.</p>
+        <p>A network of organisations of persons with disabilities, migrant justice organisations and allies. Working collaboratively we share experiences and knowledge, seeking to build solidarity and resistance to the disabling impact of restrictions imposed on people with precarious migration status.</p>
         <a href="https://disability-migration.org.uk/" target="_blank" rel="noopener">disability-migration.org.uk<span class="vh"> (opens in a new tab)</span></a>
       </li>
     </ul>
@@ -911,7 +928,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <div>
         <h3>On this site</h3>
         <p>Built to WCAG 2.2 AA. Everything sits on one page, with keyboard-navigable landmarks, visible focus indicators, and no motion for anyone who has asked their system to reduce it.</p>
-        <p>If something here is not working for you, tell us and we will fix it.</p>
+        <p>If something here is not working for you, tell us and we will fix it. Email <a href="mailto:disabilitymigrationnetwork@gmail.com">disabilitymigrationnetwork@gmail.com</a> and we will get back to you.</p>
       </div>
     </div>
   </div>
@@ -925,12 +942,12 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="9" stroke-linecap="round"/>
         <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
       </svg>
-      <p class="eyebrow">Register your interest</p>
-      <h2>Be first to know when registration opens</h2>
-      <p class="lede">The forum is free to attend. Leave your details and we will send you the agenda, registration link and access arrangements as soon as they are confirmed.</p>
+      <p class="eyebrow">Registration</p>
+      <h2>Registration now open to the Forum</h2>
+      <p class="lede">The forum is free to attend. Register below to receive the Zoom link.</p>
     </div>
 
-    <a class="btn btn-solid" href="https://us06web.zoom.us/webinar/register/WN_zuUvyVQgTWKMEHrPRwT3Ig#/registration" target="_blank" rel="noopener">Register on Zoom<span class="vh"> (opens in a new tab)</span></a>
+    <a class="btn btn-solid" href="https://us06web.zoom.us/webinar/register/WN_zuUvyVQgTWKMEHrPRwT3Ig#/registration" target="_blank" rel="noopener">Register to the Forum<span class="vh"> (opens in a new tab)</span></a>
   </div>
 </section>
 
@@ -950,7 +967,9 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <p style="max-width:34ch">Global Forum on Disability, Migration and Forced Displacement. Convened by the Transnational Consortium on Disability, Migration and Forced Displacement.</p>
     </div>
     <div>
-      <p><a href="#register">Register your interest</a><br>
+      <p><strong>Contact</strong><br>
+      <a href="mailto:disabilitymigrationnetwork@gmail.com">disabilitymigrationnetwork@gmail.com</a></p>
+      <p><a href="#register">Register to the Forum</a><br>
       <a href="#access">Accessibility</a><br>
       <a href="#consortium">Consortium members</a></p>
     </div>
@@ -1018,7 +1037,7 @@ people.forEach((p, name) => {
   grid.appendChild(li);
 });
 
-// Timezone conversion. Times in the markup are Central European Time, UTC+1.
+// Timezone conversion. Times in the markup are UK time (BST, UTC+1) on 23-24 September.
 const BASE_OFFSET = 60;
 const slots = [...document.querySelectorAll('[data-start]')];
 const pad = n => String(n).padStart(2, '0');
