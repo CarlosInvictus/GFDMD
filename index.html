@@ -281,6 +281,15 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
 .note{display:block;font-size:.8125rem;color:#5A6E8C;margin-top:.25rem;font-style:italic}
 @media (max-width:34rem){.run td:first-child{width:auto}.run{font-size:.875rem}}
 
+/* ---------- photographs ---------- */
+.shot{margin:2.5rem 0;padding:0}
+.shot img{width:100%;height:auto;display:block;border-radius:.75rem}
+.shot figcaption{
+  font-size:.875rem;line-height:1.5;color:#5A6E8C;
+  margin-top:.75rem;max-width:60ch;
+}
+.access .shot figcaption{color:var(--arc-light)}
+
 /* ---------- speakers ---------- */
 .speakers{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1rem;list-style:none;padding:0;margin:0}
 .speaker{border:1px solid var(--rule);border-left:4px solid var(--dot);border-radius:.5rem;padding:1.15rem 1.25rem;background:var(--paper)}
@@ -305,14 +314,22 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
 .org p{font-size:.9688rem;margin-bottom:1rem}
 .org a{font-family:var(--display);font-weight:700;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase}
 .funders{margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--rule)}
-.funders ul{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;list-style:none;padding:0;margin:1rem 0 0}
-.funders a{font-family:var(--display);font-weight:700;font-size:.9375rem}
+.funder-logos{
+  display:flex;flex-wrap:wrap;align-items:center;gap:2rem 3.5rem;
+  list-style:none;padding:0;margin:1.5rem 0 0;
+}
+.funder-logos img{height:3.25rem;width:auto;display:block}
+.funder-logos li:last-child img{height:4.25rem}
+.funder-logos a{display:block;border-radius:.25rem}
+@media (max-width:34rem){.funder-logos{gap:1.75rem}.funder-logos img{height:2.5rem}.funder-logos li:last-child img{height:3.25rem}}
 .access{background:var(--navy);color:#fff}
 .access h2,.access h3{color:#fff}
 .access .eyebrow{color:var(--arc-light)}
 .access p{color:#E8F0F9}
 .access .plain li{border-bottom-color:rgba(168,198,232,.3)}
 .access .plain li::before{background:var(--arc-light)}
+.access a{color:#fff;text-decoration-thickness:.1em}
+.access a:hover{color:var(--arc-light)}
 .langs{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:.5rem 0 0}
 .langs li{
   font-family:var(--display);font-weight:600;font-size:.8125rem;
@@ -380,8 +397,8 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <section class="hero" id="top">
   <div class="wrap">
     <p class="eyebrow">A first-of-its-kind global forum</p>
-    <h1>Migration systems can be <em>disabling</em>. They don't have to be.</h1>
-    <p class="lede">The Global Forum on Disability, Migration and Forced Displacement brings together people affected by migration governance, persons with disabilities, and those working in the systems that affect them &mdash; convened and led by organisations of persons with disabilities (OPDs).</p>
+    <h1>Migration and refugee systems can be <em>disabling</em>. They don't have to be.</h1>
+    <p class="lede">The Global Forum on Disability, Migration and Forced Displacement brings together persons with disabilities, organisations of persons with disabilities (OPDs), UN agencies, representatives of governments, civil society, academia, humanitarian and development organisations, and international institutions to examine migration and refugee systems from a disability perspective &mdash; convened and led by OPDs.</p>
     <ul class="hero-meta">
       <li>23&ndash;24 September 2026</li>
       <li>Online</li>
@@ -410,6 +427,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
     </div>
     <p>Migrant workers and refugees with disabilities remain marginalised within mainstream migration and refugee governance. The intersection of disability and migration is insufficiently understood and inadequately addressed across policy, programming and global review processes.</p>
     <p>Persons with disabilities face compounding barriers: legal status, the medicalisation and stigmatisation of disability, and access to regular pathways, decent work, essential services, protection and justice. These are structural barriers, not individual misfortunes &mdash; and without disability-responsive approaches to how disability is conceptualised and legislated for, they will deepen.</p>
+    <figure class="shot ">
+      <img src="images/ilo-photo-conversation.jpg" alt="A young man in a checked blazer sits at a table in conversation with a woman, both gesturing as they talk at a disability employment event." loading="lazy">
+      <figcaption>An employment event bringing jobseekers and employers together &middot; Photo &copy; International Labour Organization</figcaption>
+    </figure>
     <p>A newly formed transnational consortium of four disability-led and disability-focused migration networks &mdash; spanning Asia, Africa and Europe &mdash; is convening this forum to advance evidence, social dialogue and practical solutions that support implementation of the Convention on the Rights of Persons with Disabilities (CRPD), International Labour Standards, refugee-related initiatives, the Global Compact for Safe, Orderly and Regular Migration (GCM) and the Global Compact on Refugees (GCR).</p>
   </div>
 </section>
@@ -555,6 +576,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 
     <p class="source">Figures drawn from International Labour Organization (2026) <a href="https://www.ilo.org/sites/default/files/2026-02/Technical%20brief%20on%20Fair%20Recruitment%20of%20Migrant%20Workers%20with%20Disabilities.pdf" target="_blank" rel="noopener">Technical report on fair recruitment of migrant workers with disabilities<span class="vh"> (opens in a new tab)</span></a>. The overlap between these populations is unknown, and remains under-recognised in policy design, data systems and global review processes.</p>
 
+    <figure class="shot ">
+      <img src="images/ilo-photo-interview.jpg" alt="Two women talk across a table at a job fair. One uses a powered wheelchair; both are smiling mid-conversation." loading="lazy">
+      <figcaption>Recruitment is one of the first places disability barriers appear &middot; Photo &copy; International Labour Organization</figcaption>
+    </figure>
     <p style="margin-top:2.5rem"><strong>The timing is deliberate.</strong> The twentieth anniversary of the CRPD converges with the International Migration Review Forum in May 2026, the subsequent Global Refugee Forum cycle, and the annual International Labour Conference. That convergence is a strategic window to move from recognition to implementation.</p>
   </div>
 </section>
@@ -607,6 +632,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <p class="lede">Each session will include contributions from experts by experience and people working in solidarity, with time for discussion. Interpretation, International Sign and live captioning will run throughout.</p>
     </div>
 
+    <figure class="shot ">
+      <img src="images/ilo-photo-panel.jpg" alt="Two men sit facing each other on a stage. One holds a microphone and a walking crutch rests against his chair; the other takes notes." loading="lazy">
+      <figcaption>Sessions pair lived experience with policy expertise &middot; Photo &copy; International Labour Organization</figcaption>
+    </figure>
     <div class="tz-bar">
       <label for="tz">Show times in</label>
       <select id="tz">
@@ -636,22 +665,23 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
           </span>
         </summary>
         <div class="track-body">
-          <p>Situating today's challenges in their historical and legal context. The session examines freedom of movement, displacement and refugee protection through the social and human rights models of disability, and traces how a legacy of discrimination and systemic inequities shape the struggles of persons with disabilities today, and how international labour, disability and refugee frameworks can be interpreted to drive change.</p>
-          <p class="mod" data-name="Catalina Devandas Aguilar" data-org="Former UN Special Rapporteur on the rights of persons with disabilities" data-mod>Moderated by <strong>Catalina Devandas Aguilar</strong>, former UN Special Rapporteur on the Rights of Persons with Disabilities</p>
+          <p>Situating today's challenges in their historical and legal context. The session examines freedom of movement, displacement and refugee protection through the social and human rights models of disability, and traces how a legacy of discrimination shaped the frameworks still in use.</p>
+          <p class="mod" data-name="Catalina Devandas Aguilar" data-org="Former UN Special Rapporteur on the Rights of Persons with Disabilities" data-mod>Moderated by <strong>Catalina Devandas Aguilar</strong>, former UN Special Rapporteur on the Rights of Persons with Disabilities</p>
           <table class="run">
             <caption class="vh">Run of show, Session 1</caption>
             <thead><tr><th scope="col">Time</th><th scope="col">Item</th></tr></thead>
             <tbody>
-              <tr><td data-start="480" data-end="487">08:00&ndash;08:07</td><td>Housekeeping and welcome from the moderator</td></tr>
-              <tr><td data-start="487" data-end="494">08:07&ndash;08:14</td><td>Opening remarks from the Philippines <span class="who" data-name="USEC Atty. Darlene R. Pajarito" data-org="Department of Migrant Workers (DMW), Philippines">USEC Atty. Darlene R. Pajarito &middot; Department of Migrant Workers (DMW)</span></td></tr>
-              <tr><td data-start="494" data-end="497">08:14&ndash;08:17</td><td>Testimony &mdash; refugee (video)</td></tr>
-              <tr><td data-start="497" data-end="500">08:17&ndash;08:20</td><td>Testimony &mdash; migrant worker (video)</td></tr>
-              <tr><td data-start="500" data-end="510">08:20&ndash;08:30</td><td>Understanding disability in the migration landscape: historical exclusion <span class="who" data-name="Ben Thatcher" data-org="Disability Migration Network (DMN), Co-founder">Ben Thatcher &middot; Disability Migration Network (DMN)</span></td></tr>
-              <tr><td data-start="510" data-end="530">08:30&ndash;08:50</td><td>Refugee protection and labour migration through the CRPD <span class="who" data-name="Amalia Gamio" data-org="UN CRPD Committee, Mexico">Amalia Gamio &middot; UN CRPD Committee</span></td></tr>
-              <tr class="rest"><td data-start="530" data-end="535">08:50&ndash;08:55</td><td>Comfort break</td></tr>
-              <tr><td data-start="535" data-end="555">08:55&ndash;09:15</td><td>Refugee protection and disability <span class="who" data-name="Leana Podeszfa" data-org="UN Refugee Agency (UNHCR), Protection Officer for Disability Inclusion">Leana Podeszfa &middot; UN Refugee Agency (UNHCR)</span></td></tr>
-              <tr><td data-start="555" data-end="575">09:15&ndash;09:35</td><td>International Labour Standards with disability and labour migration <span class="who" data-name="Katerine Landuyt" data-org="International Labour Organization (ILO), Senior Specialist on Labour Migration">Katerine Landuyt &middot; International Labour Organization (ILO)</span></td></tr>
-              <tr><td data-start="575" data-end="600">09:35&ndash;10:00</td><td>Q&amp;A and discussion</td></tr>
+              <tr><td data-start="480" data-end="485">08:00&ndash;08:05</td><td>Accessibility and housekeeping <span class="who" data-name="Lucia D&rsquo;Arino" data-org="International Disability Alliance (IDA)">Lucia D&rsquo;Arino &middot; International Disability Alliance (IDA)</span></td></tr>
+              <tr><td data-start="485" data-end="490">08:05&ndash;08:10</td><td>Welcome from the moderator</td></tr>
+              <tr><td data-start="490" data-end="497">08:10&ndash;08:17</td><td>Opening remarks from the Philippines <span class="who" data-name="USEC Atty. Darlene R. Pajarito" data-org="Department of Migrant Workers (DMW), Philippines">USEC Atty. Darlene R. Pajarito &middot; Department of Migrant Workers (DMW)</span></td></tr>
+              <tr><td data-start="497" data-end="501">08:17&ndash;08:21</td><td>Testimony &mdash; refugee (video)</td></tr>
+              <tr><td data-start="501" data-end="505">08:21&ndash;08:25</td><td>Testimony &mdash; migrant worker (video)</td></tr>
+              <tr><td data-start="505" data-end="515">08:25&ndash;08:35</td><td>Understanding disability in the migration landscape: historical exclusion <span class="who" data-name="Ben Thatcher" data-org="Disability Migration Network (DMN), Co-founder">Ben Thatcher &middot; Disability Migration Network (DMN)</span></td></tr>
+              <tr><td data-start="515" data-end="535">08:35&ndash;08:55</td><td>Refugee protection and labour migration through the CRPD <span class="who" data-name="Amalia Gamio" data-org="UN CRPD Committee, Mexico">Amalia Gamio &middot; UN CRPD Committee</span></td></tr>
+              <tr class="rest"><td data-start="535" data-end="540">08:55&ndash;09:00</td><td>Comfort break</td></tr>
+              <tr><td data-start="540" data-end="560">09:00&ndash;09:20</td><td>Disability and forced displacement <span class="who" data-name="Leana Podeszfa" data-org="UN Refugee Agency (UNHCR), Protection Officer for Disability Inclusion">Leana Podeszfa &middot; UN Refugee Agency (UNHCR)</span></td></tr>
+              <tr><td data-start="560" data-end="580">09:20&ndash;09:40</td><td>International Labour Standards with disability and labour migration <span class="who" data-name="Katerine Landuyt" data-org="International Labour Organization (ILO), Senior Specialist on Labour Migration">Katerine Landuyt &middot; International Labour Organization (ILO)</span></td></tr>
+              <tr><td data-start="580" data-end="600">09:40&ndash;10:00</td><td>Q&amp;A and discussion</td></tr>
             </tbody>
           </table>
         </div>
@@ -674,14 +704,14 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
             <caption class="vh">Run of show, Session 2</caption>
             <thead><tr><th scope="col">Time</th><th scope="col">Item</th></tr></thead>
             <tbody>
-              <tr><td data-start="630" data-end="639">10:30&ndash;10:39</td><td>Housekeeping and welcome from the moderator</td></tr>
+              <tr><td data-start="630" data-end="639">10:30&ndash;10:39</td><td>Housekeeping recap and welcome from the moderator</td></tr>
               <tr><td data-start="639" data-end="642">10:39&ndash;10:42</td><td>Testimony &mdash; migrant worker (video)</td></tr>
               <tr><td data-start="642" data-end="645">10:42&ndash;10:45</td><td>Testimony &mdash; migrant worker (video)</td></tr>
-              <tr><td data-start="645" data-end="665">10:45&ndash;11:05</td><td>Disability dimensions of labour migration in ASEAN <span class="who" data-name="Ben Thatcher" data-org="Disability Migration Network (DMN), Co-founder">Ben Thatcher &middot; Disability Migration Network (DMN)</span></td></tr>
+              <tr><td data-start="645" data-end="665">10:45&ndash;11:05</td><td>Disability dimensions of labour migration in the ASEAN region <span class="who" data-name="Ben Thatcher" data-org="Disability Migration Network (DMN), Co-founder">Ben Thatcher &middot; Disability Migration Network (DMN)</span></td></tr>
               <tr><td data-start="665" data-end="685">11:05&ndash;11:25</td><td>How migration policy intersects with broader disability inclusion in Australia <span class="who" data-name="Matthew Hall" data-org="Australian Federation of Disability Organisations (AFDO), National Manager &mdash; Systemic Advocacy and Policy">Matthew Hall &middot; Australian Federation of Disability Organisations (AFDO)</span></td></tr>
               <tr class="rest"><td data-start="685" data-end="690">11:25&ndash;11:30</td><td>Comfort break</td></tr>
-              <tr><td data-start="690" data-end="710">11:30&ndash;11:50</td><td>Access to justice for migrants with disabilities in South Korea <span class="who" data-name="Jueon Lee" data-org="Duroo &mdash; Association for Public Interest Law">Jueon Lee &middot; Duroo &ndash; Association for Public Interest Law</span></td></tr>
-              <tr><td data-start="710" data-end="730">11:50&ndash;12:10</td><td>Disability and labour migration in Poland <span class="who" data-name="Dr Eva Anna Duda-Mikulin" data-org="University of Wroc&#322;aw, Assistant Professor">Dr Eva Anna Duda-Mikulin &middot; University of Wroc&#322;aw</span></td></tr>
+              <tr><td data-start="690" data-end="710">11:30&ndash;11:50</td><td>Access to justice for migrants with disabilities in South Korea <span class="who" data-name="Jueun Lee" data-org="Attorney at Law, DUROO &mdash; Association for Public Interest Law &middot; Director, KDLA &mdash; Korea Disability Law Association">Jueun Lee &middot; DUROO and KDLA</span></td></tr>
+              <tr><td data-start="710" data-end="730">11:50&ndash;12:10</td><td>Ukrainian women in Poland: matters of gender, disability and work <span class="who" data-name="Dr Eva Anna Duda-Mikulin" data-org="University of Wroc&#322;aw, Assistant Professor">Dr Eva Anna Duda-Mikulin &middot; University of Wroc&#322;aw</span></td></tr>
               <tr><td data-start="730" data-end="750">12:10&ndash;12:30</td><td>Q&amp;A and discussion</td></tr>
             </tbody>
           </table>
@@ -709,14 +739,15 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
             <caption class="vh">Run of show, Session 3</caption>
             <thead><tr><th scope="col">Time</th><th scope="col">Item</th></tr></thead>
             <tbody>
-              <tr><td data-start="480" data-end="490">08:00&ndash;08:10</td><td>Housekeeping and welcome from the moderator</td></tr>
-              <tr><td data-start="490" data-end="500">08:10&ndash;08:20</td><td>Keynote <span class="who" data-name="Jos&eacute; Maria Viera" data-org="International Disability Alliance (IDA)">Jos&eacute; Maria Viera &middot; International Disability Alliance (IDA)</span></td></tr>
+              <tr><td data-start="480" data-end="485">08:00&ndash;08:05</td><td>Accessibility and housekeeping <span class="who" data-name="Lucia D&rsquo;Arino" data-org="International Disability Alliance (IDA)">Lucia D&rsquo;Arino &middot; International Disability Alliance (IDA)</span></td></tr>
+              <tr><td data-start="485" data-end="490">08:05&ndash;08:10</td><td>Welcome from the moderator</td></tr>
+              <tr><td data-start="490" data-end="500">08:10&ndash;08:20</td><td>Keynote from the International Disability Alliance <span class="who" data-name="Jos&eacute; Maria Viera" data-org="International Disability Alliance (IDA), Executive Director">Jos&eacute; Maria Viera &middot; International Disability Alliance (IDA)</span></td></tr>
               <tr><td data-start="500" data-end="505">08:20&ndash;08:25</td><td>Testimony &mdash; migrant worker (video)</td></tr>
               <tr><td data-start="505" data-end="510">08:25&ndash;08:30</td><td>Testimony &mdash; refugee (video)</td></tr>
-              <tr><td data-start="510" data-end="520">08:30&ndash;08:40</td><td>OPDs and migrant resource centres <span class="who" data-name="Mak Monika" data-org="Cambodian Disabled People's Organization (CDPO), Executive Director">Mak Monika &middot; Cambodian Disabled People's Organization (CDPO)</span></td></tr>
-              <tr><td data-start="520" data-end="530">08:40&ndash;08:50</td><td>Building network capacity <span class="who" data-name="Julius Ntobuah" data-org="Global Network of Refugees with Disabilities (GNRD), Executive Director">Julius Ntobuah &middot; Global Network of Refugees with Disabilities (GNRD)</span></td></tr>
+              <tr><td data-start="510" data-end="520">08:30&ndash;08:40</td><td>A view from South America <span class="who" data-name="Rosa Maria" data-org="President, Inclusive Network for Disaster Risk Management and Disability in Latin America and the Caribbean (RED GIRDD-LAC)">Rosa Maria &middot; RED GIRDD-LAC</span></td></tr>
+              <tr><td data-start="520" data-end="530">08:40&ndash;08:50</td><td>OPDs and migrant resource centres <span class="who" data-name="Mak Monika" data-org="Cambodian Disabled People&rsquo;s Organization (CDPO), Executive Director">Mak Monika &middot; Cambodian Disabled People&rsquo;s Organization (CDPO)</span></td></tr>
               <tr class="rest"><td data-start="530" data-end="535">08:50&ndash;08:55</td><td>Comfort break</td></tr>
-              <tr><td data-start="535" data-end="545">08:55&ndash;09:05</td><td>A view from South America <span class="who" data-name="Rosa Maria" data-org="Latin American Network of Organizations of Persons with Disabilities and their Families (RIADIS), President of the Network for Inclusive Management of Disaster Risk and Disability">Rosa Maria &middot; RIADIS</span></td></tr>
+              <tr><td data-start="535" data-end="545">08:55&ndash;09:05</td><td>Building network capacity <span class="who" data-name="Julius Ntobuah" data-org="Global Network of Refugees with Disabilities (GNRD), Executive Director">Julius Ntobuah &middot; Global Network of Refugees with Disabilities (GNRD)</span></td></tr>
               <tr><td data-start="545" data-end="570">09:05&ndash;09:30</td><td>Q&amp;A and discussion</td></tr>
             </tbody>
           </table>
@@ -742,11 +773,11 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
             <tbody>
               <tr><td data-start="600" data-end="607">10:00&ndash;10:07</td><td>Housekeeping and welcome from the moderator</td></tr>
               <tr><td data-start="607" data-end="610">10:07&ndash;10:10</td><td>Testimony &mdash; refugee (video)</td></tr>
-              <tr><td data-start="610" data-end="620">10:10&ndash;10:20</td><td>Living in a refugee camp: a speaker from Africa on services and participation</td></tr>
-              <tr><td data-start="620" data-end="630">10:20&ndash;10:30</td><td>Displacement and camp governance: a speaker from the Middle East on resilience and leadership</td></tr>
+              <tr><td data-start="610" data-end="620">10:10&ndash;10:20</td><td>Living in a refugee camp: services and participation <span class="who" data-name="Ibrahim Basubi" data-org="Global Network of Refugees with Disabilities (GNRD)">Ibrahim Basubi &middot; Global Network of Refugees with Disabilities (GNRD)</span></td></tr>
+              <tr><td data-start="620" data-end="630">10:20&ndash;10:30</td><td>Displacement and camp governance: resilience and leadership <span class="who" data-name="Obada Alassm" data-org="Global Network of Refugees with Disabilities (GNRD)">Obada Alassm &middot; Global Network of Refugees with Disabilities (GNRD)</span></td></tr>
               <tr><td data-start="630" data-end="645">10:30&ndash;10:45</td><td>Persons with albinism on the move <span class="who" data-name="Muluka-Anne Miti-Drummond" data-org="UN Independent Expert on the enjoyment of human rights by persons with albinism">Muluka-Anne Miti-Drummond &middot; UN Independent Expert</span></td></tr>
               <tr class="rest"><td data-start="645" data-end="650">10:45&ndash;10:50</td><td>Comfort break</td></tr>
-              <tr><td data-start="650" data-end="675">10:50&ndash;11:15</td><td>Disability-inclusive humanitarian programming, and refugee governance, participation and localisation</td></tr>
+              <tr><td data-start="650" data-end="675">10:50&ndash;11:15</td><td>Disability-inclusive humanitarian programming, and refugee governance, participation and localisation <span class="who" data-name="Leana Podeszfa" data-org="UN Refugee Agency (UNHCR), Protection Officer for Disability Inclusion">Leana Podeszfa &middot; UN Refugee Agency (UNHCR)</span></td></tr>
               <tr><td data-start="675" data-end="690">11:15&ndash;11:30</td><td>Q&amp;A and call to action</td></tr>
             </tbody>
           </table>
@@ -826,10 +857,6 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
     <ul class="speakers" id="speaker-grid"></ul>
     <ul class="speakers" style="margin-top:1rem">
       <li class="speaker pending">
-        <p class="sp-name">Speakers to be announced</p>
-        <p class="sp-role">Session 4 &middot; two refugees with disabilities, from Africa and the Middle East, and a specialist on disability-inclusive humanitarian programming and refugee governance.</p>
-      </li>
-      <li class="speaker pending">
         <p class="sp-name">Contributors from DAMN and DITI</p>
         <p class="sp-org">Disability and Migration Network (UK) &middot; Disability and Immigration Taskforce of Illinois (USA)</p>
         <p class="sp-role">Session 5 &middot; several speakers' names and identities are withheld for safety reasons.</p>
@@ -849,6 +876,10 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <p class="eyebrow">From dialogue to action</p>
       <h2>What the forum produces</h2>
     </div>
+    <figure class="shot ">
+      <img src="images/ilo-photo-group.jpg" alt="A large group photograph in a bright atrium. The people include wheelchair users, crutch users and a guide dog with its handler." loading="lazy">
+      <figcaption>Change comes from organisations of persons with disabilities working together &middot; Photo &copy; International Labour Organization</figcaption>
+    </figure>
     <p class="lede">The Forum aims to move beyond discussion towards practical action. Participants will identify key priorities, barriers and opportunities for change, with these contributions informing a Call to Action on disability, migration and forced displacement following the Forum.</p>
   </div>
 </section>
@@ -897,10 +928,26 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
     </ul>
 
     <div class="funders">
-      <h3>Funders</h3>
-      <ul>
-        <li><a href="https://www.internationaldisabilityalliance.org/" target="_blank" rel="noopener">International Disability Alliance<span class="vh"> (opens in a new tab)</span></a></li>
-        <li><a href="https://www.ilo.org/projects-and-partnerships/projects/triangle-asean" target="_blank" rel="noopener">ILO TRIANGLE in ASEAN<span class="vh"> (opens in a new tab)</span></a></li>
+      <h3>Funders and supporters</h3>
+      <ul class="funder-logos">
+        <li>
+          <a href="https://www.internationaldisabilityalliance.org/" target="_blank" rel="noopener">
+            <img src="images/ida.png" alt="International Disability Alliance" width="515" height="200" loading="lazy">
+            <span class="vh">(opens in a new tab)</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.ilo.org/projects-and-partnerships/projects/triangle-asean" target="_blank" rel="noopener">
+            <img src="images/ilo.png" alt="International Labour Organization" width="555" height="200" loading="lazy">
+            <span class="vh">(opens in a new tab)</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.bmz.de/en" target="_blank" rel="noopener">
+            <img src="images/bmz.png" alt="Supported by the Federal Ministry for Economic Cooperation and Development" width="320" height="200" loading="lazy">
+            <span class="vh">(opens in a new tab)</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
