@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Global Forum on Disability, Migration and Forced Displacement</title>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta name="description" content="A global forum on disability-responsive labour migration and refugee governance, convened and led by organisations of persons with disabilities. 23-24 September 2026, online, free to attend.">
+<meta name="description" content="A global forum on disability-responsive labour migration and refugee governance, convened and led by organisations of persons with disabilities. Held online on 23-24 September 2026.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.gfdmd.org/">
 <meta property="og:title" content="Global Forum on Disability, Migration and Forced Displacement">
-<meta property="og:description" content="23–24 September 2026. Online. Free to attend. Convened and led by organisations of persons with disabilities.">
+<meta property="og:description" content="Held online on 23–24 September 2026. Five sessions, convened and led by organisations of persons with disabilities.">
 <meta property="og:image" content="https://www.gfdmd.org/images/share.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -159,22 +159,6 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
   width:min(46%,32rem);height:auto;opacity:.9;pointer-events:none;overflow:visible;
 }
 @media (max-width:60rem){.hero-arc{position:static;transform:none;width:min(80%,20rem);margin-top:2.5rem;opacity:1}}
-.hero-meta{
-  display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;
-  margin:1.75rem 0 2.5rem;padding:0;list-style:none;
-}
-.hero-meta li{
-  display:flex;align-items:center;gap:1rem;
-  font-family:var(--display);font-weight:600;font-size:.9375rem;
-  letter-spacing:.08em;text-transform:uppercase;color:var(--arc-light);
-}
-.hero-meta li:not(:last-child)::after{
-  content:"";width:4px;height:4px;border-radius:50%;
-  background:rgba(168,198,232,.6);
-}
-.hero-meta li:first-child{
-  font-size:1.0625rem;color:var(--arc-light);font-weight:700;letter-spacing:.05em;
-}
 .btn{
   display:inline-flex;align-items:center;gap:.7rem;
   font-family:var(--display);font-weight:700;font-size:1.0625rem;
@@ -186,12 +170,78 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
 }
 .btn::after{content:"\2192";font-size:1.2em;line-height:1}
 .btn:hover{background:var(--arc-light);border-color:var(--arc-light);transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.28)}
-.btn-note{
-  font-family:var(--body);font-size:.9375rem;color:var(--arc-light);
-  margin:.9rem 0 0;letter-spacing:0;text-transform:none;
+/* ---------- recap: headline on two set lines, figures beneath ---------- */
+/* the min() keeps "Two days. Five sessions." on one line even on a narrow phone */
+.hero h1.recap-title{max-width:none;font-size:min(clamp(2.15rem,4.8vw,4rem),calc((100vw - 3rem) / 11.5))}
+.recap-title span,.recap-title em{display:block;white-space:nowrap}
+.recap-stats{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.25rem;
+  max-width:44rem;margin:2.25rem 0 0;padding:1.5rem 0 0;list-style:none;
+  border-top:1px solid rgba(168,198,232,.35);
 }
-.btn-solid{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 6px 22px rgba(31,53,87,.25)}
-.btn-solid:hover{background:var(--navy-deep);border-color:var(--navy-deep);color:#fff}
+.recap-stats li{font-size:.875rem;line-height:1.4;color:var(--arc-light)}
+.recap-stats b{
+  display:block;font-family:var(--display);font-weight:700;
+  font-size:clamp(2rem,3.5vw,2.75rem);line-height:1;color:#fff;margin-bottom:.4rem;
+}
+@media (max-width:60rem){.recap-stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:30rem){.recap-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- highlights carousel ----------
+   Without JavaScript this is a sideways-scrolling list; the script adds the buttons. */
+main > section.highlights{background:var(--navy-deep);background-image:none;color:#fff;padding-block:clamp(3rem,6vw,5rem)}
+.hl-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem}
+.highlights h2.eyebrow{color:var(--arc-light);margin:0}
+.hl-controls{display:flex;align-items:center;gap:.75rem}
+.hl-controls[hidden]{display:none}
+.hl-btn{
+  width:3rem;height:3rem;border-radius:50%;cursor:pointer;
+  background:transparent;color:#fff;border:2px solid var(--arc-light);
+  font-size:1.25rem;line-height:1;display:grid;place-items:center;
+  transition:background .18s ease,color .18s ease;
+}
+.hl-btn:hover:not(:disabled){background:var(--arc-light);color:var(--navy-deep)}
+.hl-btn:disabled{opacity:.35;cursor:default}
+.hl-count{margin:0;min-width:4.5rem;text-align:center;font-family:var(--display);font-weight:700;color:#fff}
+.hl-track{
+  overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+  border-radius:.75rem;scrollbar-color:var(--arc-light) transparent;
+}
+.hl-track.enhanced{scrollbar-width:none}
+.hl-track.enhanced::-webkit-scrollbar{display:none}
+.hl-slides{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:1.5rem;list-style:none;margin:0;padding:0;position:relative}
+.hl-slide{
+  scroll-snap-align:start;display:flex;flex-direction:column;
+  min-height:clamp(20rem,38vw,26rem);padding:clamp(1.75rem,4vw,3.5rem);
+  background:var(--navy);border-radius:.75rem;position:relative;overflow:hidden;
+  background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 62'><path d='M10 56 A40 40 0 0 1 90 56' fill='none' stroke='%23A8C6E8' stroke-width='9' stroke-linecap='round' opacity='0.08'/><circle cx='10' cy='56' r='7' fill='%23A8C6E8' opacity='0.08'/></svg>");
+  background-repeat:no-repeat;background-position:right -4rem bottom -3rem;background-size:24rem auto;
+}
+.hl-session{
+  font-family:var(--display);font-weight:600;font-size:.8125rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--arc-light);margin:0 0 1.5rem;
+}
+.hl-quote{
+  font-family:var(--display);font-weight:700;color:#fff;
+  font-size:clamp(1.5rem,3.2vw,2.5rem);line-height:1.2;letter-spacing:-.01em;
+  max-width:30ch;margin:0 0 1.25rem;
+}
+.hl-figure{
+  font-family:var(--display);font-weight:700;color:var(--arc-light);
+  font-size:clamp(3.5rem,9vw,6.5rem);line-height:1;letter-spacing:-.02em;margin:0 0 .75rem;
+}
+.hl-stat{font-size:clamp(1.15rem,1.8vw,1.45rem);line-height:1.45;color:#fff;max-width:40ch;margin:0 0 1.25rem}
+.hl-note{color:#E8F0F9;max-width:56ch;margin:0 0 1.5rem;font-size:1rem}
+.hl-who{margin:auto 0 0;padding-top:1rem;font-size:.9375rem;color:var(--arc-light);max-width:60ch}
+.hl-who strong{color:#fff}
+.hl-progress{height:3px;margin-top:1.25rem;background:rgba(168,198,232,.2);border-radius:2px;overflow:hidden}
+.hl-progress span{display:block;height:100%;width:10%;background:var(--arc-light);transition:width .3s ease}
+.recap-thanks{
+  margin-top:2.5rem;padding:.25rem 0 .25rem 1.1rem;border-left:3px solid var(--arc-light);max-width:60ch;
+}
+.recap-thanks p{margin:0;color:#E8F0F9;font-size:1.0625rem;line-height:1.55}
+.recap-thanks p + p{margin-top:.35rem;color:var(--arc-light)}
+.recap-thanks strong{color:#fff}
 
 /* ---------- figures ---------- */
 .stat-panel{
@@ -222,16 +272,7 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
 @media (max-width:44rem){.aims{grid-template-columns:1fr}}
 
 /* ---------- agenda ---------- */
-.tz-bar{
-  display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;
-  padding:1rem 1.25rem;margin-bottom:2.5rem;
-  background:var(--paper);border:1px solid var(--rule);border-radius:.75rem;
-}
-.tz-bar label{font-family:var(--display);font-weight:600;font-size:.9375rem}
-.tz-bar select,.field select{
-  font-family:var(--body);font-size:1rem;color:var(--navy-deep);
-  padding:.5rem .75rem;border:1.5px solid var(--rule);border-radius:.5rem;background:var(--paper);
-}
+.tz-note{font-family:var(--display);font-weight:600;font-size:.9375rem;color:var(--navy);margin:0 0 2.5rem}
 .day{margin-bottom:3rem}
 .day-head{
   display:flex;flex-wrap:wrap;align-items:baseline;gap:.85rem;
@@ -304,15 +345,15 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
 .plain{list-style:none;padding:0;margin:0}
 .plain li{padding:.6rem 0 .6rem 1.5rem;border-bottom:1px solid var(--rule);position:relative;font-size:1rem}
 .plain li::before{content:"";position:absolute;left:0;top:1.15rem;width:.5rem;height:.5rem;border-radius:50%;background:var(--dot)}
-.orgs{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;list-style:none;padding:0;margin:0}
-@media (max-width:46rem){.orgs{grid-template-columns:1fr}}
+.orgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;list-style:none;padding:0;margin:0}
+@media (max-width:46rem){.orgs{grid-template-columns:minmax(0,1fr)}}
 .org-logo{height:3.5rem;width:auto;max-width:100%;object-fit:contain;object-position:left;margin-bottom:1.1rem}
 .org{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule);border-radius:.75rem;padding:1.75rem}
 .org a{margin-top:auto}
 .org h3{margin-bottom:.3rem}
 .org .focal{font-size:.9375rem;color:#41597B;margin:0 0 .9rem}
 .org p{font-size:.9688rem;margin-bottom:1rem}
-.org a{font-family:var(--display);font-weight:700;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase}
+.org a{font-family:var(--display);font-weight:700;font-size:.875rem;letter-spacing:.06em;text-transform:uppercase;overflow-wrap:anywhere}
 .funders{margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--rule)}
 .funder-logos{
   display:flex;flex-wrap:wrap;align-items:center;gap:2rem 3.5rem;
@@ -336,15 +377,6 @@ section{padding-block:clamp(3.5rem,7vw,6.5rem)}
   border:1px solid rgba(168,198,232,.55);color:var(--arc-light);
   padding:.35rem .8rem;border-radius:2rem;
 }
-.form{max-width:34rem;margin-top:2rem}
-.field{margin-bottom:1.25rem}
-.field label{display:block;font-family:var(--display);font-weight:600;font-size:.9375rem;margin-bottom:.4rem}
-.field input,.field select,.field textarea{
-  width:100%;font-family:var(--body);font-size:1rem;color:var(--navy-deep);
-  padding:.75rem .9rem;border:1.5px solid var(--rule);border-radius:.5rem;background:var(--paper);
-}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--dot)}
-.hint{font-size:.875rem;color:#5A6E8C;margin:.35rem 0 0}
 footer{background:var(--navy-deep);color:#C9DAEC;padding-block:3rem;font-size:.9375rem}
 footer a{color:#fff}
 footer .brand span{color:#fff}
@@ -376,6 +408,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
     </div>
     <nav id="primary-nav" aria-label="Section navigation">
       <ul>
+        <li><a class="navlink" href="#highlights">Highlights</a></li>
         <li><a class="navlink" href="#about">About</a></li>
         <li><a class="navlink" href="#why">Why now</a></li>
         <li><a class="navlink" href="#aims">Objectives</a></li>
@@ -384,7 +417,6 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         <li><a class="navlink" href="#action">Action</a></li>
         <li><a class="navlink" href="#consortium">Consortium</a></li>
         <li><a class="navlink" href="#access">Access</a></li>
-        <li><a class="navlink" href="#register">Register</a></li>
       </ul>
     </nav>
   </div>
@@ -396,23 +428,109 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow">A first-of-its-kind global forum</p>
-    <h1>Migration and refugee systems can be <em>disabling</em>. They don't have to be.</h1>
-    <p class="lede">The Global Forum on Disability, Migration and Forced Displacement brings together persons with disabilities, organisations of persons with disabilities (OPDs), UN agencies, representatives of governments, civil society, academia, humanitarian and development organisations, and international institutions to examine migration and refugee systems from a disability perspective &mdash; convened and led by OPDs.</p>
-    <ul class="hero-meta">
-      <li>23&ndash;24 September 2026</li>
-      <li>Online</li>
-      <li>Free to attend</li>
-      <li>OPD-led</li>
+    <p class="eyebrow">Forum recap &middot; 23&ndash;24 September 2026</p>
+    <h1 class="recap-title"><span>Two days. Five sessions.</span> <em>What we heard.</em></h1>
+    <p class="lede">Persons with disabilities, organisations of persons with disabilities (OPDs), UN agencies, governments, researchers and civil society met online to examine how migration and refugee systems disable people &mdash; and what it will take to change them. The forum was convened and led by OPDs.</p>
+    <ul class="recap-stats">
+      <li><b>2</b> days</li>
+      <li><b>5</b> sessions</li>
+      <li><b>20+</b> speakers and moderators</li>
+      <li><b>7</b> recorded testimonies</li>
+      <li><b>10</b> languages, plus International Sign and live captions</li>
     </ul>
-    <a class="btn" href="https://us06web.zoom.us/webinar/register/WN_zuUvyVQgTWKMEHrPRwT3Ig#/registration" target="_blank" rel="noopener">Register to the Forum<span class="vh"> (opens in a new tab)</span></a>
-    <p class="btn-note">Registration is open and takes a couple of minutes.</p>
   </div>
   <svg class="hero-arc" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
     <path class="draw" pathLength="1" d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
     <path class="draw draw-2" pathLength="1" d="M24 56 A26 26 0 0 1 76 56" fill="none" stroke="#7BA4D4" stroke-width="5" stroke-linecap="round"/>
     <circle cx="10" cy="56" r="5.5" fill="#A8C6E8"/>
   </svg>
+</section>
+
+<!-- ============ HIGHLIGHTS ============ -->
+<!-- Every line below is taken from the speakers' own presentation slides. Session 5 names
+     no individual speaker, for the safety reasons given in the Speakers section. -->
+<section id="highlights" class="highlights" aria-roledescription="carousel" aria-labelledby="hl-title">
+  <div class="wrap">
+    <div class="hl-head">
+      <h2 id="hl-title" class="eyebrow">Highlights from the five sessions</h2>
+      <div class="hl-controls" hidden>
+        <button type="button" class="hl-btn" data-dir="-1" aria-label="Previous highlight"><span aria-hidden="true">&larr;</span></button>
+        <p class="hl-count" aria-live="polite"><span class="vh">Highlight </span><span id="hl-now">1</span> of <span id="hl-total">10</span></p>
+        <button type="button" class="hl-btn" data-dir="1" aria-label="Next highlight"><span aria-hidden="true">&rarr;</span></button>
+      </div>
+    </div>
+
+    <div class="hl-track" tabindex="0" aria-label="Highlights, scroll sideways for more">
+      <ul class="hl-slides">
+        <li class="hl-slide" aria-roledescription="slide" aria-label="1 of 10">
+          <p class="hl-session">Session 1 &middot; The foundations</p>
+          <p class="hl-quote">The language changed. Many underlying assumptions persisted.</p>
+          <p class="hl-note">On how disability shaped the origins of modern immigration restriction &mdash; and why the work now is moving from fixing people to fixing systems.</p>
+          <p class="hl-who"><strong>Ben Thatcher</strong> &middot; Disability Migration Network (DMN)</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="2 of 10">
+          <p class="hl-session">Session 1 &middot; The foundations</p>
+          <p class="hl-quote">A strong protection claim can still go unheard if the procedure is inaccessible.</p>
+          <p class="hl-note">Accessible information, qualified interpretation and adjustments at interview are what make asylum procedures fair.</p>
+          <p class="hl-who"><strong>Leana Podeszfa</strong> &middot; UN Refugee Agency (UNHCR)</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="3 of 10">
+          <p class="hl-session">Session 1 &middot; The foundations</p>
+          <p class="hl-quote">A workplace injury should not become a chain of exclusion.</p>
+          <p class="hl-note">The first of six takeaways for policy and practice: disability is not automatic unfitness.</p>
+          <p class="hl-who"><strong>Katerine Landuyt</strong> &middot; International Labour Organization (ILO)</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="4 of 10">
+          <p class="hl-session">Session 2 &middot; Labour migration in practice</p>
+          <p class="hl-figure">30.9%</p>
+          <p class="hl-stat">of migrant workers with disabilities reported experiences consistent with forced labour &mdash; against 8.4% of those without disabilities.</p>
+          <p class="hl-who"><strong>Ben Thatcher</strong> &middot; Disability Migration Network (DMN), citing the ILO&ndash;IOM survey of 2024</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="5 of 10">
+          <p class="hl-session">Session 2 &middot; Labour migration in practice</p>
+          <p class="hl-figure">9,291</p>
+          <p class="hl-stat">migrants were registered as disabled in South Korea at the end of 2025. At the rate for Korean nationals, it would be around 46,200.</p>
+          <p class="hl-who"><strong>Jueun Lee</strong> &middot; DUROO and KDLA</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="6 of 10">
+          <p class="hl-session">Session 2 &middot; Labour migration in practice</p>
+          <p class="hl-quote">Access to justice is not a courtesy &mdash; it is the substance of the right to a fair hearing.</p>
+          <p class="hl-note">No blind spots should remain wherever identities intersect.</p>
+          <p class="hl-who"><strong>Jueun Lee</strong> &middot; DUROO and KDLA</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="7 of 10">
+          <p class="hl-session">Session 3 &middot; Lessons from the disability movement</p>
+          <p class="hl-quote">Migration policies assume non-disabled migrants, while disability policies often overlook migration experiences.</p>
+          <p class="hl-note">The &ldquo;double invisibility&rdquo; facing migrants with disabilities in South America.</p>
+          <p class="hl-who"><strong>Rosa Maria</strong> &middot; RED GIRDD-LAC</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="8 of 10">
+          <p class="hl-session">Session 3 &middot; Lessons from the disability movement</p>
+          <p class="hl-quote">From passive beneficiaries to active decision-makers.</p>
+          <p class="hl-note">Building the capacity of OPDs so that migrants and displaced persons with disabilities lead their own advocacy.</p>
+          <p class="hl-who"><strong>Mak Monika</strong> &middot; Cambodian Disabled People&rsquo;s Organization (CDPO)</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="9 of 10">
+          <p class="hl-session">Session 4 &middot; Refugee camps in the Global South</p>
+          <p class="hl-quote">Insecurity and threats to life. Aggravated discrimination. Inadequate access to critical health care.</p>
+          <p class="hl-note">The drivers of migration for persons with albinism.</p>
+          <p class="hl-who"><strong>Muluka-Anne Miti-Drummond</strong> &middot; UN Independent Expert on the enjoyment of human rights by persons with albinism</p>
+        </li>
+        <li class="hl-slide" aria-roledescription="slide" aria-label="10 of 10">
+          <p class="hl-session">Session 5 &middot; Resisting disabling systems in the Global North</p>
+          <p class="hl-quote">How to increase solidarity and build alternatives to current disabling systems.</p>
+          <p class="hl-note">An open discussion across borders, with persons with disabilities organising in the UK and the USA.</p>
+          <p class="hl-who"><strong>Disability and Migration Network (DAMN)</strong> &middot; Disability and Immigration Taskforce of Illinois (DITI)</p>
+        </li>
+      </ul>
+    </div>
+    <div class="hl-progress" aria-hidden="true"><span id="hl-bar"></span></div>
+
+    <div class="recap-thanks">
+      <p><strong>Thank you</strong> to everyone who spoke, moderated, interpreted, captioned and took part.</p>
+      <p>Session recordings, testimonies and presentations will be published here soon.</p>
+    </div>
+  </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
@@ -431,7 +549,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <img src="images/ilo-photo-conversation.jpg" alt="A young man in a checked blazer sits at a table in conversation with a woman, both gesturing as they talk at a disability employment event." loading="lazy">
       <figcaption>An employment event bringing jobseekers and employers together &middot; Photo &copy; International Labour Organization</figcaption>
     </figure>
-    <p>A newly formed transnational consortium of four disability-led and disability-focused migration networks &mdash; spanning Asia, Africa and Europe &mdash; is convening this forum to advance evidence, social dialogue and practical solutions that support implementation of the Convention on the Rights of Persons with Disabilities (CRPD), International Labour Standards, refugee-related initiatives, the Global Compact for Safe, Orderly and Regular Migration (GCM) and the Global Compact on Refugees (GCR).</p>
+    <p>A newly formed transnational consortium of four disability-led and disability-focused migration networks &mdash; spanning Asia, Africa and Europe &mdash; convened this forum to advance evidence, social dialogue and practical solutions that support implementation of the Convention on the Rights of Persons with Disabilities (CRPD), International Labour Standards, refugee-related initiatives, the Global Compact for Safe, Orderly and Regular Migration (GCM) and the Global Compact on Refugees (GCR).</p>
   </div>
 </section>
 
@@ -580,7 +698,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <img src="images/ilo-photo-interview.jpg" alt="Two women talk across a table at a job fair. One uses a powered wheelchair; both are smiling mid-conversation." loading="lazy">
       <figcaption>Recruitment is one of the first places disability barriers appear &middot; Photo &copy; International Labour Organization</figcaption>
     </figure>
-    <p style="margin-top:2.5rem"><strong>The timing is deliberate.</strong> The twentieth anniversary of the CRPD converges with the International Migration Review Forum in May 2026, the subsequent Global Refugee Forum cycle, and the annual International Labour Conference. That convergence is a strategic window to move from recognition to implementation.</p>
+    <p style="margin-top:2.5rem"><strong>The timing was deliberate.</strong> The twentieth anniversary of the CRPD coincided with the International Migration Review Forum in May 2026, the Global Refugee Forum cycle that follows it, and the annual International Labour Conference. That convergence is a strategic window to move from recognition to implementation.</p>
   </div>
 </section>
 
@@ -593,8 +711,8 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
       </svg>
       <p class="eyebrow">Objectives</p>
-      <h2>What the Forum aims to do</h2>
-      <p class="lede">Central to the forum is addressing how disability discrimination and ableism become embedded in labour migration and asylum laws, procedures and institutions &mdash; and identifying the practical reforms that remove them.</p>
+      <h2>What the Forum set out to do</h2>
+      <p class="lede">Central to the forum was addressing how disability discrimination and ableism become embedded in labour migration and asylum laws, procedures and institutions &mdash; and identifying the practical reforms that remove them.</p>
     </div>
     <ul class="aims">
       <li>
@@ -629,28 +747,14 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       </svg>
       <p class="eyebrow">Agenda</p>
       <h2>Five sessions across two days</h2>
-      <p class="lede">Each session will include contributions from experts by experience and people working in solidarity, with time for discussion. Interpretation, International Sign and live captioning will run throughout.</p>
+      <p class="lede">Each session included contributions from experts by experience and people working in solidarity, with time for discussion. Interpretation, International Sign and live captioning ran throughout.</p>
     </div>
 
     <figure class="shot ">
       <img src="images/ilo-photo-panel.jpg" alt="Two men sit facing each other on a stage. One holds a microphone and a walking crutch rests against his chair; the other takes notes." loading="lazy">
       <figcaption>Sessions pair lived experience with policy expertise &middot; Photo &copy; International Labour Organization</figcaption>
     </figure>
-    <div class="tz-bar">
-      <label for="tz">Show times in</label>
-      <select id="tz">
-        <option value="-420">Los Angeles &mdash; PDT (UTC&minus;7)</option>
-        <option value="-240">New York &mdash; EDT (UTC&minus;4)</option>
-        <option value="60" selected>UK &mdash; London, BST (UTC+1)</option>
-        <option value="120">Geneva &mdash; CEST (UTC+2)</option>
-        <option value="120">Sweden &mdash; CEST (UTC+2)</option>
-        <option value="180">Uganda &mdash; EAT (UTC+3)</option>
-        <option value="420">Thailand &mdash; ICT (UTC+7)</option>
-        <option value="480">Philippines &mdash; PHT (UTC+8)</option>
-        <option value="540">Korea &mdash; KST (UTC+9)</option>
-        <option value="600">Sydney &mdash; AEST (UTC+10)</option>
-      </select>
-    </div>
+    <p class="tz-note">All times are UK time (BST, UTC+1).</p>
 
     <div class="day">
       <h3 class="day-head"><span>Day 1</span> Wednesday, 23 September 2026</h3>
@@ -795,7 +899,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
           </span>
         </summary>
         <div class="track-body">
-          <p>How border regimes, procedures and institutional arrangements disable the people moving through them &mdash; both those already disabled when the journey begins and those the system disables along the way, with contributions from members of the Disability and Migration Network (DAMN) in the UK and the Disability and Immigration Taskforce of Illinois (DITI) in the USA. We will explore: the current context and how we got here; the disabling impact of immigration policy that prevents access to essential services and support; collective action and resistance supporting people's survival; and how to increase solidarity and build alternatives to current disabling systems.</p>
+          <p>How border regimes, procedures and institutional arrangements disable the people moving through them &mdash; both those already disabled when the journey begins and those the system disables along the way, with contributions from members of the Disability and Migration Network (DAMN) in the UK and the Disability and Immigration Taskforce of Illinois (DITI) in the USA. The session explored: the current context and how we got here; the disabling impact of immigration policy that prevents access to essential services and support; collective action and resistance supporting people's survival; and how to increase solidarity and build alternatives to current disabling systems.</p>
           <p class="mod" data-name="Dr Rebecca Yeo" data-org="Disability and Migration Network (DAMN)" data-mod>Moderated by <strong>Dr Rebecca Yeo</strong>, Disability and Migration Network (DAMN)</p>
           <table class="run">
             <caption class="vh">Run of show, Session 5</caption>
@@ -819,14 +923,13 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       <div>
         <h3>Format</h3>
         <ul class="plain">
-          <li>Fully online across two mornings, UK time (BST, UTC+1)</li>
+          <li>Held fully online across two mornings, UK time (BST, UTC+1)</li>
           <li>Sessions of 90 to 120 minutes, with comfort breaks throughout</li>
-          <li>Recorded testimony from migrants and refugees with disabilities opens every session</li>
-          <li>Programme still being finalised &mdash; some speakers to be announced</li>
+          <li>Recorded testimony from migrants and refugees with disabilities opened every session</li>
         </ul>
       </div>
       <div>
-        <h3>Who attends</h3>
+        <h3>Who it was for</h3>
         <ul class="plain">
           <li>Migration and refugee policymakers, practitioners and government representatives</li>
           <li>UN agencies and international organisations</li>
@@ -849,7 +952,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
       </svg>
       <p class="eyebrow">Speakers and moderators</p>
-      <h2>Who you'll hear from</h2>
+      <h2>Who spoke</h2>
       <p class="lede">Treaty body members, UN mandate holders, ILO specialists, public interest lawyers and OPD leaders &mdash; alongside refugees and migrant workers with disabilities speaking to their own experience. Every name here also appears in the agenda above.</p>
     </div>
 
@@ -874,13 +977,13 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
         <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
       </svg>
       <p class="eyebrow">From dialogue to action</p>
-      <h2>What the forum produces</h2>
+      <h2>What comes next</h2>
     </div>
     <figure class="shot ">
       <img src="images/ilo-photo-group.jpg" alt="A large group photograph in a bright atrium. The people include wheelchair users, crutch users and a guide dog with its handler." loading="lazy">
       <figcaption>Change comes from organisations of persons with disabilities working together &middot; Photo &copy; International Labour Organization</figcaption>
     </figure>
-    <p class="lede">The Forum aims to move beyond discussion towards practical action. Participants will identify key priorities, barriers and opportunities for change, with these contributions informing a Call to Action on disability, migration and forced displacement following the Forum.</p>
+    <p class="lede">The Forum set out to move beyond discussion towards practical action. The priorities, barriers and opportunities for change raised across the five sessions will inform a Call to Action on disability, migration and forced displacement.</p>
   </div>
 </section>
 
@@ -894,7 +997,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       </svg>
       <p class="eyebrow">The consortium</p>
       <h2>Four networks. Three regions. One agenda.</h2>
-      <p class="lede">This will be the first global event on disability in labour migration and refugee governance designed, convened and led by OPDs &mdash; including networks representing migrants and refugees with disabilities themselves. Lived experience is not consultative here; it sets the agenda.</p>
+      <p class="lede">This was the first global event on disability in labour migration and refugee governance designed, convened and led by OPDs &mdash; including networks representing migrants and refugees with disabilities themselves. Lived experience was not consultative here; it set the agenda.</p>
     </div>
     <ul class="orgs">
       <li class="org">
@@ -963,7 +1066,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
       </svg>
       <p class="eyebrow">Accessibility</p>
       <h2>Participation is the point</h2>
-      <p class="lede">A forum about disabling systems cannot itself be one. Access provisions are built into the forum's design and budget from the start, not added on request.</p>
+      <p class="lede">A forum about disabling systems cannot itself be one. Access provisions were built into the forum's design and budget from the start, not added on request.</p>
     </div>
     <div class="cols">
       <div>
@@ -988,23 +1091,6 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
   </div>
 </section>
 
-<!-- ============ REGISTER ============ -->
-<section id="register">
-  <div class="wrap">
-    <div class="section-head">
-      <svg class="arc-mark" viewBox="0 0 100 62" aria-hidden="true" focusable="false">
-        <path d="M10 56 A40 40 0 0 1 90 56" fill="none" stroke="#1F3557" stroke-width="9" stroke-linecap="round"/>
-        <circle cx="10" cy="56" r="7" fill="#4E86C6"/>
-      </svg>
-      <p class="eyebrow">Registration</p>
-      <h2>Registration now open to the Forum</h2>
-      <p class="lede">The forum is free to attend. Register below to receive the Zoom link.</p>
-    </div>
-
-    <a class="btn btn-solid" href="https://us06web.zoom.us/webinar/register/WN_zuUvyVQgTWKMEHrPRwT3Ig#/registration" target="_blank" rel="noopener">Register to the Forum<span class="vh"> (opens in a new tab)</span></a>
-  </div>
-</section>
-
 </main>
 
 <footer>
@@ -1023,7 +1109,7 @@ footer .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-bet
     <div>
       <p><strong>Contact</strong><br>
       <a href="mailto:disabilitymigrationnetwork@gmail.com">disabilitymigrationnetwork@gmail.com</a></p>
-      <p><a href="#register">Register to the Forum</a><br>
+      <p><a href="#agenda">Programme</a><br>
       <a href="#access">Accessibility</a><br>
       <a href="#consortium">Consortium members</a></p>
     </div>
@@ -1091,24 +1177,52 @@ people.forEach((p, name) => {
   grid.appendChild(li);
 });
 
-// Timezone conversion. Times in the markup are UK time (BST, UTC+1) on 23-24 September.
-const BASE_OFFSET = 60;
-const slots = [...document.querySelectorAll('[data-start]')];
-const pad = n => String(n).padStart(2, '0');
+// Highlights carousel. The list already scrolls sideways on its own; this adds
+// previous/next buttons and a counter. It never advances by itself.
+const track = document.querySelector('.hl-track');
+const slides = [...track.querySelectorAll('.hl-slide')];
+const prevBtn = document.querySelector('.hl-btn[data-dir="-1"]');
+const nextBtn = document.querySelector('.hl-btn[data-dir="1"]');
+const now = document.getElementById('hl-now');
+const bar = document.getElementById('hl-bar');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let current = -1;
 
-function format(mins) {
-  const wrapped = ((mins % 1440) + 1440) % 1440;
-  const day = Math.floor(mins / 1440);
-  const label = `${pad(Math.floor(wrapped / 60))}:${pad(wrapped % 60)}`;
-  return day === 0 ? label : `${label} (${day > 0 ? '+' : '\u2212'}1 day)`;
-}
+document.getElementById('hl-total').textContent = slides.length;
+document.querySelector('.hl-controls').hidden = false;
+track.classList.add('enhanced');
 
-document.getElementById('tz').addEventListener('change', e => {
-  const shift = Number(e.target.value) - BASE_OFFSET;
-  slots.forEach(el => {
-    el.textContent = `${format(Number(el.dataset.start) + shift)}\u2013${format(Number(el.dataset.end) + shift)}`;
-  });
+const show = i => {
+  if (i === current) return;
+  current = i;
+  now.textContent = i + 1;
+  bar.style.width = `${((i + 1) / slides.length) * 100}%`;
+  prevBtn.disabled = i === 0;
+  nextBtn.disabled = i === slides.length - 1;
+};
+
+const goTo = i => {
+  track.scrollTo({ left: slides[i].offsetLeft, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+};
+
+[prevBtn, nextBtn].forEach(btn => btn.addEventListener('click', () => {
+  goTo(Math.min(Math.max(current + Number(btn.dataset.dir), 0), slides.length - 1));
+}));
+
+track.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+    e.preventDefault();
+    goTo(Math.min(Math.max(current + (e.key === 'ArrowRight' ? 1 : -1), 0), slides.length - 1));
+  }
 });
+
+track.addEventListener('scroll', () => {
+  const nearest = slides.reduce((best, s, i) =>
+    Math.abs(s.offsetLeft - track.scrollLeft) < Math.abs(slides[best].offsetLeft - track.scrollLeft) ? i : best, 0);
+  show(nearest);
+}, { passive: true });
+
+show(0);
 </script>
 
 </body>
